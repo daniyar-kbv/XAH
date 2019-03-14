@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 
 class Mainpage extends Component {
   render() {
@@ -482,4 +481,4 @@ class Mainpage extends Component {
   }
 }
 
-export default App;
+export default Mainpage;
