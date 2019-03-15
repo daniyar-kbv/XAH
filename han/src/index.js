@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// import './assets/css/theme.css'
+// import './assets/css/entypo.css'
+// import './assets/css/socicon.css'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
