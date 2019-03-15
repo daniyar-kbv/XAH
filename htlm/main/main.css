@@ -1,4 +1,6 @@
-
+.bg{
+    z-index: -1 !important;
+}
 .cat-text{
     color: white;
     font-size: 3vw;

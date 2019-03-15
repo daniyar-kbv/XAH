@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import Mainpage from './components/mainpage/main';
+import  Category from './components/category/category'
+import Header from './components/header/header'
+import Article from './components/article/article'
 
 class App extends Component {
   render() {
     return (
-<<<<<<< HEAD
-        <div/>
-=======
-      <div/>
->>>>>>> e75d33d46eb1058d43f12ba3f15c877b04cae9a9
+        <Header/>
     );
   }
 }
