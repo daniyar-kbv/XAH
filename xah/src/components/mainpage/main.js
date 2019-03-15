@@ -30,8 +30,8 @@ class Hotnews extends Component{
                         </div>
                     </div>
                 </div>
-                <div className="col-6 col-sm-6 col-lg-6">
-                    <div className="row h-50 h-50 shadow-box-small image-in">
+                <div className="col-6 col-sm-6 col-lg-6 p-0">
+                    <div className="row col-12 h-50 h-50 shadow-box-small image-in m-0 w-100">
                     <Image className="bg-image bg" src={nazik} alt="Image"/>
                         <div className="d-flex align-content-between flex-wrap h-100">
                             <div className="ml-auto d-flex cat-box">
@@ -45,7 +45,7 @@ class Hotnews extends Component{
                         </div>
                     </div>
                     <div className="w-100"></div>
-                    <div className="row h-50 h-50 shadow-box-small image-in">
+                    <div className="row col-12 h-50 h-50 shadow-box-small image-in m-0">
                     <Image className="bg-image bg" src={oscar} alt="Image"/>
                         <div className="d-flex align-content-between flex-wrap h-100">
                             <div className="ml-auto d-flex cat-box">
