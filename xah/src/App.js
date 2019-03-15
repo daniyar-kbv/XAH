@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import Footer from '../src/components/footer/footer'
+import Header from '../src/components/header/header'
+
 
 class App extends Component {
   render() {
     return (
-<<<<<<< HEAD
-        <div/>
-=======
-      <div/>
->>>>>>> e75d33d46eb1058d43f12ba3f15c877b04cae9a9
+      <div>
+      <Header/>
+      <Footer/>
+      </div>
     );
   }
 }

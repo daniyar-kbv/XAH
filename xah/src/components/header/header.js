@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './header.css'
+import '../../assets/css/theme.css'
+// import '../../assets/css/entypo.css'
+// import '../../assets/css/socicon.css'
 
 class Header extends Component {
     render() {
         return(
-            <div className="container">
+            <div>
                 <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <div className="row">
