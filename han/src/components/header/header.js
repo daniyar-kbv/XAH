@@ -4,6 +4,7 @@ import '../../assets/css/entypo.css'
 import '../../assets/css/socicon.css'
 import './header.css'
 import navimage from '../../assets/img/avatar-male-3.jpg'
+
 class Header extends Component {
     render() {
         return(
