@@ -1,57 +1,61 @@
 import React, { Component } from 'react';
 import { Button, Container , Row, Col, Image} from 'react-bootstrap';
 import './main.css';
-import '../../assets/css/theme.css'
-import magazines from './images/magazines.jpg'
-import nazik from './images/Nazik.jpg'
-import oscar from './images/oscar.jpg'
-import incard from '../../assets/img/graphic-product-bench-thumb.jpg'
-import ad1 from './images/landrover.png'
-import ad2 from './images/ipo.png'
-import othernewscardimg from './images/x-trail.jpg'
+import '../../assets/css/theme.css';
+import magazines from './images/magazines.jpg';
+import nazik from './images/Nazik.jpg';
+import oscar from './images/oscar.jpg';
+import incard from '../../assets/img/graphic-product-bench-thumb.jpg';
+import ad1 from './images/landrover.png';
+import ad2 from './images/ipo.png';
+import othernewscardimg from './images/x-trail.jpg';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Hotnews extends Component{
     render(){
         return(
-            <div className="row mt-5 ml-1 mr-1 mb-5" id="hot-news">
-                <div className="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in">
-                    <Image className="bg-image bg" src={magazines} alt="Image"/>
-                    <div className="d-flex align-content-between flex-wrap h-100">
-                        <div className="ml-auto d-flex cat-box">
-                            <div className="bg-dark w-100">
-                                <p className="mt-2 text-center cat-text">Auto</p>
+            <div class="row mt-5 ml-1 mr-1" id="hot-news">
+                <div className="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style={image(magazines)}>
+                    <Link to={'./article'}>
+                        <div className="d-flex align-content-between flex-wrap h-100">
+                            <div className="ml-auto d-flex cat-box">
+                                <div className="bg-dark w-100">
+                                    <p className="mt-2 mb-2 text-center cat-text">
+                                        <a>Авто</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="mt-auto p-2 bd-highlight">
+                                <p className="m-1 text-left hot-new-text hot-new-text-white image-in">Lorem ipsum dolor
+                                    sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua</p>
                             </div>
                         </div>
-                        <div className="mt-auto p-2 bd-highlight">
-                            <p className="m-1 text-left hot-new-text hot-new-text-white image-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                        </div>
-                    </div>
+                    </Link>
                 </div>
-                <div className="col-6 col-sm-6 col-lg-6 p-0">
-                    <div className="row col-12 h-50 h-50 shadow-box-small image-in m-0 w-100">
-                        <Image className="bg-image bg" src={nazik} alt="Image"/>
-                        <div className="d-flex align-content-between flex-wrap h-100">
-                            <div className="ml-auto d-flex cat-box">
-                                <div className="bg-dark w-100">
-                                    <p className="mt-2 text-center cat-text">Auto</p>
+                <div class="col-6 col-sm-6 col-lg-6">
+                    <div class="row h-50 h-50 shadow-box-small image-in" style={image(nazik)}>
+                        <div class="d-flex align-content-between flex-wrap h-100">
+                            <div class="ml-auto d-flex cat-box">
+                                <div class="bg-dark w-100">
+                                    <p class="mt-2 mb-2 text-center cat-text">Авто</p>
                                 </div>
                             </div>
-                            <div className="mt-auto p-2 bd-highlight">
-                                <p className="m-1 text-left hot-new-text-white hot-new-text-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div class="mt-auto p-2 bd-highlight">
+                                <p class="m-1 text-left hot-new-text-white hot-new-text-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                             </div>
                         </div>
                     </div>
-                    <div className="w-100"></div>
-                    <div className="row col-12 h-50 h-50 shadow-box-small image-in m-0">
-                    <Image className="bg-image bg" src={oscar} alt="Image"/>
-                        <div className="d-flex align-content-between flex-wrap h-100">
-                            <div className="ml-auto d-flex cat-box">
-                                <div className="bg-dark w-100">
-                                    <p className="mt-2 text-center cat-text">Auto</p>
+                    <div class="w-100"></div>
+                    <div class="row h-50 h-50 shadow-box-small image-in" style={image(oscar)}>
+                        <div class="d-flex align-content-between flex-wrap h-100">
+                            <div class="ml-auto d-flex cat-box">
+                                <div class="bg-dark w-100">
+                                    <p class="mt-2 mb-2 text-center cat-text">Авто</p>
                                 </div>
                             </div>
-                            <div className="mt-auto p-2 bd-highlight">
-                                <p className="m-1 text-left hot-new-text-white hot-new-text-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div class="mt-auto p-2 bd-highlight">
+                                <p class="m-1 text-left hot-new-text-white hot-new-text-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                             </div>
                         </div>
                     </div>
