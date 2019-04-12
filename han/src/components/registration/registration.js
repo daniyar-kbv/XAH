@@ -4,10 +4,7 @@ import './registration.css';
 class Registration extends Component {
     render() {
         return (
-            <div>
-                <div class="nav-container">
-                </div>
-                <div class="main-container">
+                <div class="container">
                     <section class="space-sm">
                         <div class="container align-self-start">
                             <div class="row mb-5">
@@ -52,7 +49,6 @@ class Registration extends Component {
                         </div>
                     </section>
                 </div>
-            </div>
         );
     }
 }
