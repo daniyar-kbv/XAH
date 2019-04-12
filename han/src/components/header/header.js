@@ -3,7 +3,7 @@ import '../../assets/css/theme.css'
 import '../../assets/css/entypo.css'
 import '../../assets/css/socicon.css'
 import './header.css'
-
+import navimage from '../../assets/img/avatar-male-3.jpg'
 class Header extends Component {
     render() {
         return(
@@ -82,7 +82,7 @@ class Header extends Component {
                                         </form>
                                     <li className="nav-item dropdown">
                                         <a className="nav-link dropdown-toggle dropdown-toggle-no-arrow p-lg-0" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img alt="Image" src="assets/img/avatar-male-3.jpg" className="avatar avatar-xs" />
+                                            <img alt="Image" src={navimage} className="avatar avatar-xs" />
                                             <span className="badge badge-danger">8</span>
                                         </a>
                                         <div className="dropdown-menu dropdown-menu-sm dropdown-menu-right" aria-labelledby="dropdown01">

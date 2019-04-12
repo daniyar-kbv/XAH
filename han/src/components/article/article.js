@@ -1,6 +1,67 @@
 import React, { Component } from 'react';
 import './article.css';
 import '../../assets/css/theme.css'
+import incard from '../../assets/img/graphic-product-bench-thumb.jpg'
+import bigimage from '../../assets/img/photo-woman-writing.jpg'
+import commentimage from '../../assets/img/avatar-female-2.jpg'
+
+class PostInCard extends Component{
+    render(){
+        return(
+            <li>
+                <div className="media">
+                    <a href="#">
+                        <img alt="Image" src={incard} className="avatar avatar-square rounded mr-3" />
+                    </a>
+                    <div className="media-body">
+                        <a href="#">
+                            <span className="h6">Bench</span>
+                        </a>
+                        <span className="badge badge-secondary">Productivity</span>
+                        <div className="text-muted">
+                            <ul className="list-inline">
+                                <li className="list-inline-item">
+                                    <small><i className="icon-heart"></i> 373</small>
+                                </li>
+                                <li className="list-inline-item">
+                                    <small><i className="icon-message"></i> 62</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        );
+    }
+}
+
+class Comment extends Component{
+    render(){
+        return(
+            <li class="list-group-item py-4">
+                <div class="media">
+                    <img alt="Image" src={commentimage} class="avatar avatar-sm" />
+                    <div class="media-body">
+                        <div class="mb-2">
+                            <span class="h6 mb-0">Kelly Fraiser</span>
+                            <span class="text-muted">Making awesome products</span>
+                        </div>
+                        <p>
+                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="mr-2">
+                                <button class="btn btn-sm btn-outline-primary">Reply</button>
+                                <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up"></i>&nbsp;(2)</button>
+                            </div>
+                            <small class="text-muted">1st Dec 2017 • 10:15am</small>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        );
+    }
+}
 
 class Article extends Component {
   render() {
@@ -33,7 +94,7 @@ class Article extends Component {
                     <div class="row justify-content-between">
                         <div class="col-12 col-md-8 col-lg-7">
                             <figure class="figure">
-                                <img alt="Image" src="assets/img/photo-woman-writing.jpg" class="img-fluid figure-img" />
+                                <img alt="Image" src={bigimage} class="img-fluid figure-img" />
                                 <figcaption class="figure-caption">Figure one: Mission Control panel</figcaption>
                             </figure>
                             <article>
@@ -98,135 +159,10 @@ class Article extends Component {
                                     </form>
                                 </div>
                                 <ul class="list-group list-group-flush list-group-comments">
-
-                                    <li class="list-group-item py-4">
-                                        <div class="media">
-                                            <img alt="Image" src="assets/img/avatar-female-2.jpg" class="avatar avatar-sm" />
-                                            <div class="media-body">
-                                                <div class="mb-2">
-                                                    <span class="h6 mb-0">Kelly Fraiser</span>
-                                                    <span class="text-muted">Making awesome products</span>
-                                                </div>
-                                                <p>
-                                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                                                </p>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="mr-2">
-                                                        <button class="btn btn-sm btn-outline-primary">Reply</button>
-                                                        <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up"></i>&nbsp;(2)</button>
-                                                    </div>
-                                                    <small class="text-muted">1st Dec 2017 • 10:15am</small>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </li>
-
-                                    <li class="list-group-item py-4">
-                                        <div class="media">
-                                            <img alt="Image" src="assets/img/avatar-male-6.jpg" class="avatar avatar-sm" />
-                                            <div class="media-body">
-                                                <div class="mb-2">
-                                                    <span class="h6 mb-0">Tim Lester</span>
-                                                    <span class="text-muted">Interface Designer @ Squanch</span>
-                                                </div>
-                                                <p>
-                                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                                                </p>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="mr-2">
-                                                        <button class="btn btn-sm btn-outline-primary">Reply</button>
-                                                        <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up"></i>
-                                                        </button>
-                                                    </div>
-                                                    <small class="text-muted">1st Dec 2017 • 10:15am</small>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="media">
-                                            <img alt="Image" src="assets/img/avatar-female-5.jpg" class="avatar avatar-sm" />
-                                            <div class="media-body">
-                                                <div class="mb-2">
-                                                    <span class="h6 mb-0">Carly Pemberton</span>
-                                                    <span class="text-muted">Freelance Product Engineer</span>
-                                                </div>
-                                                <p>
-                                                    Omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
-                                                </p>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="mr-2">
-                                                        <button class="btn btn-sm btn-outline-primary">Reply</button>
-                                                        <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up"></i>(4)</button>
-                                                    </div>
-                                                    <small class="text-muted">1st Dec 2017 • 10:15am</small>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="media">
-                                            <img alt="Image" src="assets/img/graphic-product-paydar-thumb.jpg" class="avatar avatar-sm" />
-                                            <div class="media-body">
-                                                <div class="mb-2">
-                                                    <span class="h6 mb-0">Luke Carol</span>
-                                                    <span class="text-muted">Product Designer</span>
-                                                </div>
-                                                <p>
-                                                    Adipisci velit, sed quia non numquam eius modi tempora
-                                                </p>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="mr-2">
-                                                        <button class="btn btn-sm btn-outline-primary">Reply</button>
-                                                        <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up"></i>
-                                                        </button>
-                                                    </div>
-                                                    <small class="text-muted">1st Dec 2017 • 10:15am</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item py-4">
-                                        <div class="media">
-                                            <img alt="Image" src="assets/img/avatar-male-3.jpg" class="avatar avatar-sm" />
-                                            <div class="media-body">
-                                                <div class="mb-2">
-                                                    <span class="h6 mb-0">Pip Thompson</span>
-                                                    <span class="text-muted">Development at Kin</span>
-                                                </div>
-                                                <p>
-                                                    Natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                                                </p>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="mr-2">
-                                                        <button class="btn btn-sm btn-outline-primary">Reply</button>
-                                                        <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up"></i>&nbsp;(1)</button>
-                                                    </div>
-                                                    <small class="text-muted">1st Dec 2017 • 10:15am</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item py-4">
-                                        <div class="media">
-                                            <img alt="Image" src="assets/img/avatar-male-1.jpg" class="avatar avatar-sm" />
-                                            <div class="media-body">
-                                                <div class="mb-2">
-                                                    <span class="h6 mb-0">Daniel Cameron</span>
-                                                    <span class="text-muted">Industrial Designer at Kin</span>
-                                                </div>
-                                                <p>
-                                                    Nam HTML tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est
-                                                </p>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="mr-2">
-                                                        <button class="btn btn-sm btn-outline-primary">Reply</button>
-                                                        <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up"></i>&nbsp;(1)</button>
-                                                    </div>
-                                                    <small class="text-muted">1st Dec 2017 • 10:15am</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    <Comment/>
+                                    <Comment/>
+                                    <Comment/>
+                                    <Comment/>
                                 </ul>
                             </div>
                         </div>
@@ -277,101 +213,10 @@ class Article extends Component {
                                 <div class="card-body">
                                     <ul class="list-unstyled list-spacing-sm">
 
-                                        <li>
-                                            <div class="media">
-                                                <a href="#">
-                                                    <img alt="Image" src="assets/img/graphic-product-bench-thumb.jpg" class="avatar avatar-square rounded mr-3" />
-                                                </a>
-                                                <div class="media-body">
-                                                    <a href="#">
-                                                        <span class="h6">Bench</span>
-                                                    </a>
-                                                    <span class="badge badge-secondary">Business</span>
-                                                    <div class="text-muted">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <small><i class="icon-heart"></i> 373</small>
-                                                            </li>
-                                                            <li class="list-inline-item">
-                                                                <small><i class="icon-message"></i> 62</small>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div class="media">
-                                                <a href="#">
-                                                    <img alt="Image" src="assets/img/graphic-product-kin-thumb.jpg" class="avatar avatar-square rounded mr-3" />
-                                                </a>
-                                                <div class="media-body">
-                                                    <a href="#">
-                                                        <span class="h6">Kin</span>
-                                                    </a>
-                                                    <span class="badge badge-secondary">Sports</span>
-                                                    <div class="text-muted">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <small><i class="icon-heart"></i> 84</small>
-                                                            </li>
-                                                            <li class="list-inline-item">
-                                                                <small><i class="icon-message"></i> 21</small>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div class="media">
-                                                <a href="#">
-                                                    <img alt="Image" src="assets/img/graphic-product-paydar-thumb.jpg" class="avatar avatar-square rounded mr-3" />
-                                                </a>
-                                                <div class="media-body">
-                                                    <a href="#">
-                                                        <span class="h6">Paydar</span>
-                                                    </a>
-                                                    <span class="badge badge-secondary">Productivity</span>
-                                                    <div class="text-muted">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <small><i class="icon-heart"></i> 253</small>
-                                                            </li>
-                                                            <li class="list-inline-item">
-                                                                <small><i class="icon-message"></i> 19</small>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div class="media">
-                                                <a href="#">
-                                                    <img alt="Image" src="assets/img/graphic-product-pipeline-thumb.jpg" class="avatar avatar-square rounded mr-3" />
-                                                </a>
-                                                <div class="media-body">
-                                                    <a href="#">
-                                                        <span class="h6">pipeline.js</span>
-                                                    </a>
-                                                    <span class="badge badge-secondary">Development</span>
-                                                    <div class="text-muted">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <small><i class="icon-heart"></i> 84</small>
-                                                            </li>
-                                                            <li class="list-inline-item">
-                                                                <small><i class="icon-message"></i> 25</small>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        <PostInCard/>
+                                        <PostInCard/>
+                                        <PostInCard/>
+                                        <PostInCard/>
 
                                     </ul>
                                 </div>
