@@ -6,6 +6,8 @@ import Footer from '../src/components/footer/footer'
 import Category from '../src/components/category/category'
 import Article from '../src/components/article/article'
 import Mainpage from './components/mainpage/main'
+import Registration from './components/registration/registration'
+import Login from './components/login/login'
 
 class App extends Component {
   render() {
@@ -16,6 +18,8 @@ class App extends Component {
                 <Route path="/" exact component={Mainpage}></Route>
                 <Route path="/category" exact component={Category}></Route>
                 <Route path="/article" exact component={Article}></Route>
+                <Route path="/registration" exact component={Registration}></Route>
+                <Route path="/login" exact component={Login}></Route>
                 <Footer/>
             </div>
         </Router>

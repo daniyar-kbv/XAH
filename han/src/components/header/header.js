@@ -5,7 +5,7 @@ import '../../assets/css/socicon.css'
 import './header.css'
 import navimage from '../../assets/img/avatar-male-3.jpg'
 import { BrowserRouter as Router, Route, Link} from "react-router-dom";
-import Category from '../category/category'
+import Category from '../category/category';
 
 class CategoryInNav extends Component {
     render() {
