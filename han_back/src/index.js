@@ -58,7 +58,78 @@ app.post('/categories', (req, res) => {
             return res.json({status: 'error', data: err})
         return res.json(category)
     })
-})
+});
+
+app.get('/users', (req, res) => {
+    User.find({}, (err, users) =>{
+        if(err){
+            return res.json({status: 'error', data: err})
+        }
+        return res.json(users)
+    })
+});
+
+app.post('/users', (req, res) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    let role = req.body.role;
+
+    if (!username || !password || !role)
+        return res.json({status: 'error', data: 'Invalid parameters'})
+
+    User.create({username: username, password: password, role: role}, (err, user) => {
+        if(err)
+            return res.json({status: 'error', data: err})
+        return res.json(user)
+    })
+});
+
+app.get('/comments', (req, res) => {
+    Comment.find({}, (err, comments) =>{
+        if(err){
+            return res.json({status: 'error', data: err})
+        }
+        return res.json(comments)
+    })
+});
+
+app.post('/comments', (req, res) => {
+    let body = req.body.body;
+    let date = req.body.date_published;
+    let user = req.body.user;
+    let article = req.body.article;
+
+    if (!body || !date || !user || !article)
+        return res.json({status: 'error', data: 'Invalid parameters'})
+
+    Comment.create({body: body, date_published: date, user: user, article: article}, (err, user) => {
+        if(err)
+            return res.json({status: 'error', data: err})
+        return res.json(user)
+    })
+});
+
+app.get('/comments_like', (req, res) => {
+    CommentLike.find({}, (err, comments_like) =>{
+        if(err){
+            return res.json({status: 'error', data: err})
+        }
+        return res.json(comments_like)
+    })
+});
+
+app.post('/comments_like', (req, res) => {
+    let comment = req.body.comment;
+
+    if (!comment)
+        return res.json({status: 'error', data: 'Invalid parameters'})
+
+    CommentLike.create({comment: comment}, (err, user) => {
+        if(err)
+            return res.json({status: 'error', data: err})
+        return res.json(user)
+    })
+});
 
 app.listen(port, () =>
     console.log('Example app listening on port 8000!'),
