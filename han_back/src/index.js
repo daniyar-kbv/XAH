@@ -2,21 +2,10 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-<<<<<<< HEAD
 import Article from './models/article'
 import Category from './models/category'
 import bodyParser from'body-parser';
 
-=======
-import bodyParser from'body-parser';
-
-import Article from './models/article';
-import Role from './models/role';
-import User from './models/user';
-import Comment from './models/comment';
-import CommentLike from './models/comment_like'
-
->>>>>>> 016de260c2cdbad45725608fb94e32e5ab4dcce1
 const app = express();
 const port = 8000;
 
@@ -49,7 +38,6 @@ app.post('/articles', (req, res) => {
             return res.json({status: 'error', data: err})
         return res.json(article)
     })
-<<<<<<< HEAD
 })
 app.get('/categories', (req, res) => {
     Category.find({}, (err, categories) =>{
@@ -70,8 +58,6 @@ app.post('/categories', (req, res) => {
             return res.json({status: 'error', data: err})
         return res.json(category)
     })
-=======
->>>>>>> 016de260c2cdbad45725608fb94e32e5ab4dcce1
 });
 
 app.get('/users', (req, res) => {
