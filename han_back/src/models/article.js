@@ -4,4 +4,4 @@ const Article = mongoose.model('Article', {
     name: String
 });
 
-module.exports = Article
+module.exports = Article;
