@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 const Comment = mongoose.model('Comment', {
     body: String,
     date_published: Date,
-    user:{
+    user: {
         type: Schema.Types.ObjectId, ref: User
     },
     article: {

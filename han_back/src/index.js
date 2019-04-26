@@ -3,7 +3,12 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import Article from './models/article'
+import ArticleLike from './models/article_like'
 import Category from './models/category'
+import User from './models/user'
+import Comment from './models/comment'
+import CommentLike from './models/comment_like'
+import Role from './models/role'
 import bodyParser from'body-parser';
 
 const app = express();
