@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './registration.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Registration extends Component {
     render() {
@@ -41,7 +42,7 @@ class Registration extends Component {
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <span class="text-small">Уже есть аккаунт? <a href="#">Войти</a>
+                                        <span class="text-small">Уже есть аккаунт? <Link to={'./login'}><a href="#">Войти</a></Link>
                                         </span>
                                     </div>
                                 </div>
