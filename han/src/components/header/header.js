@@ -71,7 +71,7 @@ class Header extends Component {
                                                 <input className="form-control w-100" type="search" placeholder="Search" aria-label="Search"/>
                                             </form>
                                             <li className="col-sm-2">
-                                                <h5><a className="nav-link">Войти</a></h5>
+                                                <Link to={'./login'}><h5><a className="nav-link">Войти</a></h5></Link>
                                             </li>
                                         </ul>
                                     </div>

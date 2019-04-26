@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "express": "^4.16.4",
     "flickity": "^2.2.0",
+    "jquery": "^3.4.0",
     "popper.js": "^1.14.7",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.16.0",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.4",
@@ -15,7 +17,7 @@
     "react-scripts": "2.1.8",
     "scrollmonitor": "^1.2.4",
     "smartwizard": "^4.3.1",
-    "smooth-scroll": "^16.0.0",
+    "smooth-scroll": "^16.0.3",
     "zoom-vanilla.js": "^2.0.6"
   },
   "scripts": {
