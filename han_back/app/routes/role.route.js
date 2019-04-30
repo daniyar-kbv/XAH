@@ -1,6 +1,6 @@
 module.exports = (app) => {
     const roles = require('../controllers/role.controller.js');
 
-    // Retrieve all Roles
+    app.post('/roles', roles.create);
     app.get('/roles/:noteId', roles.findOne);
 }

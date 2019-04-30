@@ -23,8 +23,8 @@ exports.create = (req, res) => {
 
 exports.findAll = (req, res) => {
     Category.find()
-    .then(notes => {
-        res.send(notes);
+    .then(categories => {
+        res.send(categories);
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while retrieving categories."

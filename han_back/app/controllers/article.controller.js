@@ -25,3 +25,14 @@ exports.create = (req, res) => {
         });
     });
 }
+
+exports.findAll = (req, res) => {
+    Article.find()
+    .then(articles => {
+        res.send(articles);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving articles."
+        });
+    });
+};

@@ -1,5 +1,6 @@
 module.exports = (app) => {
     const articles = require('../controllers/article.controller.js');
 
-    // app.get('/articles/', articles.findAll);
+    app.post('/articles', articles.create);
+    app.get('/articles', articles.findAll);
 }
