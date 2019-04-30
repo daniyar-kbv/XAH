@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import Category from './category'
-import User from './user.models'
+import Category from './category.model'
+import User from './user'
 
 var Schema = mongoose.Schema;
 

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Article from './article';
+import Article from './article.model';
 
 var Schema = mongoose.Schema;
 
