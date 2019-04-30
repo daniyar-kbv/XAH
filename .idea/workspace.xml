@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c6ff42e-850f-45cb-8a71-b5f3c6c74e1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_test/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front_test/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/han_back/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database.erwin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/han_back/src/models/article_like.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/han_back/src/models/category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/han_back/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/han_back/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/han_back/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/han_back/src/models/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/src/models/article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/han_back/src/models/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/src/models/comment.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/han_back/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-end-line="142" />
+            <state relative-caret-position="530">
+              <caret line="181" column="2" selection-start-line="181" selection-start-column="2" selection-end-line="181" selection-end-column="2" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -30,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/han_back/src/api/comment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+            <state relative-caret-position="330">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -46,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/han_back/src/models/article.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -64,9 +69,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/han_back/src/models/comment_like.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/han_back/src/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="30">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -130,8 +147,8 @@
         <option value="$PROJECT_DIR$/han_back/src/models/CommentLike.js" />
         <option value="$PROJECT_DIR$/han_back/src/models/comment_like.js" />
         <option value="$PROJECT_DIR$/han_back/.gitignore" />
-        <option value="$PROJECT_DIR$/han_back/src/index.js" />
         <option value="$PROJECT_DIR$/han_back/src/api/comment.js" />
+        <option value="$PROJECT_DIR$/han_back/src/index.js" />
       </list>
     </option>
   </component>
@@ -231,12 +248,12 @@
       <workItem from="1556455826764" duration="45000" />
       <workItem from="1556460801509" duration="24000" />
       <workItem from="1556640399666" duration="240000" />
-      <workItem from="1556640707877" duration="1012000" />
+      <workItem from="1556640707877" duration="1410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53641000" />
+    <option name="totallyTimeSpent" value="54039000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -463,16 +480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/han_back/src/models/comment_like.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/han_back/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -497,17 +504,7 @@
     <entry file="file://$PROJECT_DIR$/han_back/src/models/article.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/han_back/src/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -515,6 +512,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/han_back/src/api/comment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -528,20 +535,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/han_back/src/index.js">
+    <entry file="file://$PROJECT_DIR$/han_back/src/models/comment_like.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-end-line="142" />
+        <state relative-caret-position="165">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/han_back/src/api/comment.js">
+    <entry file="file://$PROJECT_DIR$/han_back/src/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/han_back/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="181" column="2" selection-start-line="181" selection-start-column="2" selection-end-line="181" selection-end-column="2" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
