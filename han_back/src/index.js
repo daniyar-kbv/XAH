@@ -2,25 +2,30 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import Article from './models/article'
-import ArticleLike from './models/article_like'
-import Category from './models/category'
-import User from './models/user'
-import Comment from './models/comment'
-import CommentLike from './models/comment_like'
-import Role from './models/role'
+import Article from './models/article';
+import ArticleLike from './models/article_like';
+import Category from './models/category';
+import User from './models/user';
+import Comment from './models/comment';
+import CommentLike from './models/comment_like';
+import Role from './models/role';
 import bodyParser from'body-parser';
 
 const app = express();
 const port = 8000;
+const mongoURL = 'mongodb://localhost:27017/test';
 
 app.use(bodyParser.json());
 app.use(cors());
 
 mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true});
 
+
+// Article_like
+
+// Article
 app.get('/articles', (req, res) => {
-    Article.find({}, (err, articles) =>{
+    Article.find({}, (err, articles) => {
         if(err){
             return res.json({status: 'error', data: err})
         }
@@ -34,16 +39,19 @@ app.post('/articles', (req, res) => {
     let imageUrl = req.body.imageUrl;
     let datePublished = req.body.datePublished;
     let category = req.body.category;
+    let user = req.body.user;
 
     if (!title || !body || !imageUrl || !datePublished || !category)
         return res.json({status: 'error', data: 'Invalid parameters'})
 
-    Article.create({title: title, body: body, imageUrl: imageUrl, datePublished: datePublished, category: category}, (err, article) => {
+    Article.create({title: title, body: body, imageUrl: imageUrl, datePublished: datePublished, category: category, user: user}, (err, article) => {
         if(err)
             return res.json({status: 'error', data: err})
         return res.json(article)
     })
-})
+});
+
+// Category
 app.get('/categories', (req, res) => {
     Category.find({}, (err, categories) =>{
         if(err){
@@ -65,30 +73,30 @@ app.post('/categories', (req, res) => {
     })
 });
 
-app.get('/users', (req, res) => {
-    User.find({}, (err, users) =>{
+// Comment_like
+app.get('/comments_like', (req, res) => {
+    CommentLike.find({}, (err, comments_like) =>{
         if(err){
             return res.json({status: 'error', data: err})
         }
-        return res.json(users)
+        return res.json(comments_like)
     })
 });
 
-app.post('/users', (req, res) => {
-    let username = req.body.username;
-    let password = req.body.password;
-    let role = req.body.role;
+app.post('/comments_like', (req, res) => {
+    let comment = req.body.comment;
 
-    if (!username || !password || !role)
+    if (!comment)
         return res.json({status: 'error', data: 'Invalid parameters'})
 
-    User.create({username: username, password: password, role: role}, (err, user) => {
+    CommentLike.create({comment: comment}, (err, user) => {
         if(err)
             return res.json({status: 'error', data: err})
         return res.json(user)
     })
 });
 
+// Comment
 app.get('/comments', (req, res) => {
     Comment.find({}, (err, comments) =>{
         if(err){
@@ -114,27 +122,33 @@ app.post('/comments', (req, res) => {
     })
 });
 
-app.get('/comments_like', (req, res) => {
-    CommentLike.find({}, (err, comments_like) =>{
+// Role
+
+// User
+app.get('/users', (req, res) => {
+    User.find({}, (err, users) =>{
         if(err){
             return res.json({status: 'error', data: err})
         }
-        return res.json(comments_like)
+        return res.json(users)
     })
 });
 
-app.post('/comments_like', (req, res) => {
-    let comment = req.body.comment;
+app.post('/users', (req, res) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    let role = req.body.role;
 
-    if (!comment)
+    if (!username || !password || !role)
         return res.json({status: 'error', data: 'Invalid parameters'})
 
-    CommentLike.create({comment: comment}, (err, user) => {
+    User.create({username: username, password: password, role: role}, (err, user) => {
         if(err)
             return res.json({status: 'error', data: err})
         return res.json(user)
     })
 });
+
 
 app.listen(port, () =>
     console.log('Example app listening on port 8000!'),
