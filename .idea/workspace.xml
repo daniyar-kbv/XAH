@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c6ff42e-850f-45cb-8a71-b5f3c6c74e1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/adf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database.erwin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/han_back/src/models/article_like.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/han_back/src/models/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/han_back/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/han_back/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/han_back/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/han_back/src/models/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/src/models/article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/han_back/src/models/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/han_back/src/models/comment.js" afterDir="false" />
-    </list>
+    <list default="true" id="1c6ff42e-850f-45cb-8a71-b5f3c6c74e1b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -26,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/han_back/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="181" column="2" selection-start-line="181" selection-start-column="2" selection-end-line="181" selection-end-column="2" />
+            <state relative-caret-position="1680">
+              <caret line="112" column="14" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -248,12 +238,12 @@
       <workItem from="1556455826764" duration="45000" />
       <workItem from="1556460801509" duration="24000" />
       <workItem from="1556640399666" duration="240000" />
-      <workItem from="1556640707877" duration="1410000" />
+      <workItem from="1556640707877" duration="1645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54039000" />
+    <option name="totallyTimeSpent" value="54274000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -557,8 +547,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/han_back/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="181" column="2" selection-start-line="181" selection-start-column="2" selection-end-line="181" selection-end-column="2" />
+        <state relative-caret-position="1680">
+          <caret line="112" column="14" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
