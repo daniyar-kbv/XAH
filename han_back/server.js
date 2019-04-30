@@ -34,7 +34,12 @@ app.get('/', (req, res) => {
 require('./app/routes/role.route.js')(app);
 require('./app/routes/comment.route.js')(app);
 require('./app/routes/category.route.js')(app);
+<<<<<<< HEAD
 require('./app/routes/comment_like.route.js')(app);
+=======
+require('./app/routes/article.route.js')(app);
+require('./app/routes/user.route.js')(app);
+>>>>>>> 7acffc87e3768f54b9076b919b54e47f31d254fb
 
 // listen for requests
 app.listen(8000, () => {
