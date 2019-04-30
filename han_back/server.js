@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
 
 require('./app/routes/role.route.js')(app);
 require('./app/routes/comment.route.js')(app);
+require('./app/routes/category.route.js')(app);
 
 // listen for requests
 app.listen(8000, () => {
