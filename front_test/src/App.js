@@ -77,6 +77,7 @@ class App extends Component{
       };
       this.props.createArticle(data);
       this.props.getArticles();
+      console.log(this.props.articles);
   }
 
   render() {
