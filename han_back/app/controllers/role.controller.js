@@ -1,4 +1,4 @@
-const Role = require('../models/role.models.js');
+const Role = require('../models/role.model.js');
 
 // Find a single note with a noteId
 exports.findOne = (req, res) => {
