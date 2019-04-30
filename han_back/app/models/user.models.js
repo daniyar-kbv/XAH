@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Role from './role'
+import Role from './role.models'
 
 var Schema = mongoose.Schema;
 

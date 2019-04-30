@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Comment from './comment';
+import Comment from './comment.models';
 
 var Schema = mongoose.Schema;
 

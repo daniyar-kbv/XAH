@@ -2,14 +2,14 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import Article from './models/article';
-import ArticleLike from './models/article_like';
-import Category from './models/category';
-import User from './models/user';
-import Comment from './models/comment';
-import CommentLike from './models/comment_like';
+import Article from '../app/models/article';
+import ArticleLike from '../app/models/article_like';
+import Category from '../app/models/category';
+import User from '../app/models/user.models';
+import Comment from '../app/models/comment.models';
+import CommentLike from '../app/models/comment_like.models';
 
-import Role from './models/role';
+import Role from '../app/models/role.models';
 import bodyParser from'body-parser';
 
 const app = express();
