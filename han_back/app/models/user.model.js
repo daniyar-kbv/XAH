@@ -1,9 +1,15 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs')
+var Schema = mongoose.Schema;
+
+import Role from './role.model';
 
 var userSchema = new mongoose.Schema({
     username: String,
     password: String,
+    role: {
+        type: Schema.Types.ObjectId, ref: Role
+    }
 },{timestamps:true})
 
 userSchema.pre('save', function (next) {

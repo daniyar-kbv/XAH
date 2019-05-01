@@ -34,23 +34,13 @@ app.get('/', (req, res) => {
 require('./app/routes/role.route.js')(app);
 require('./app/routes/comment.route.js')(app);
 require('./app/routes/category.route.js')(app);
-<<<<<<< HEAD
 require('./app/routes/comment_like.route.js')(app);
 require('./app/routes/article.route.js')(app);
 require('./app/routes/user.route.js')(app);
 require('./app/routes/login.route.js')(app);
-=======
 require('./app/routes/article.route.js')(app);
 require('./app/routes/user.route.js')(app);
->>>>>>> 4280018bff0ed2204c6b4774485404681a5b8524
 
-
-// let jwt = require('jsonwebtoken');
-// var decoded = jwt.verify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1Y2M5YjZhMjgxMzI2MjFkNWU4MTM4MWIiLCJpYXQiOjE1NTY3MjY2NTF9.Ccyoy_WXmSP1iKi6PlamH0JzLzJJ9mE2VnooDDPek-k", 'shhhhh');
-// console.log(decoded.foo) // bar
-// jwt.verify("asd", 'shhhhh', function(err, decoded) {
-//     console.log("token") // bar
-// });
 // listen for requests
 app.listen(8000, () => {
     console.log("Server is listening on port 8000");

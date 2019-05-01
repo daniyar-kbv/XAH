@@ -31,16 +31,14 @@ exports.create = (req, res) => {
 
 // Retrieve and return all comments from the database.
 exports.findAll = (req, res) => {
-    if (req.user.role.name != "Read"){
-        Comment.find()
-        .then(comments => {
-            res.send(comments);
-        }).catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving comments."
-            });
+    Comment.find()
+    .then(comments => {
+        res.send(comments);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving comments."
         });
-    }
+    });
 };
 
 // Find a single comment with a commentId
