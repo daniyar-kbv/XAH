@@ -2,6 +2,7 @@ const User = require('../models/user.model');
 
 exports.create = (req, res) => {
 
+    // Changable value
     const DEFAULT_ROLE = "5cc89f638c63d24eac5e11dc";
 
     if(!req.body.username || !req.body.password) {
