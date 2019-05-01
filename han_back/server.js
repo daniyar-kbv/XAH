@@ -34,10 +34,15 @@ app.get('/', (req, res) => {
 require('./app/routes/role.route.js')(app);
 require('./app/routes/comment.route.js')(app);
 require('./app/routes/category.route.js')(app);
+<<<<<<< HEAD
 require('./app/routes/comment_like.route.js')(app);
 require('./app/routes/article.route.js')(app);
 require('./app/routes/user.route.js')(app);
 require('./app/routes/login.route.js')(app);
+=======
+require('./app/routes/article.route.js')(app);
+require('./app/routes/user.route.js')(app);
+>>>>>>> 4280018bff0ed2204c6b4774485404681a5b8524
 
 
 // let jwt = require('jsonwebtoken');
