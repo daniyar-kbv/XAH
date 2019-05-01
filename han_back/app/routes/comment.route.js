@@ -1,3 +1,5 @@
+let middleware = require('../../middleware');
+
 module.exports = (app) => {
     const comments = require('../controllers/comment.controller.js');
 
@@ -5,7 +7,7 @@ module.exports = (app) => {
     app.post('/comments', comments.create);
 
     // Retrieve all comments
-    app.get('/comments', comments.findAll);
+    app.get('/comments', middleware.checkToken, comments.findAll);
 
     // Retrieve a single comment with commentId
     app.get('/comments/:commentId', comments.findOne);
