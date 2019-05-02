@@ -3,15 +3,9 @@ let middleware = require('../../middleware');
 module.exports = (app) => {
     const comments = require('../controllers/comment.controller.js');
 
-    // Create a new comment
-    app.post('/comments', comments.create);
+    app.post('/comments/:articleId', middleware.checkToken, comments.create);
 
-    // Retrieve all comments
-    app.get('/comments', middleware.checkToken, comments.findAll);
+    app.get('/comments/:articleId', comments.findAll);
 
-    // Retrieve a single comment with commentId
-    app.get('/comments/:commentId', comments.findOne);
-
-    // Delete a comment with commentId
-    app.delete('/comments/:commentId', comments.delete);
+    app.delete('/comments/:commentId', middleware.checkToken, comments.delete);
 }

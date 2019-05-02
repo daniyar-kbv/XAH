@@ -1,12 +1,18 @@
 import mongoose from 'mongoose';
 import Article from './article.model';
+import User from './user.model'
 
 var Schema = mongoose.Schema;
 
-const Article_like = mongoose.model('Article_like', {
+const articleLikeSchema = new mongoose.Schema({
+    user:{
+        type: Schema.Types.ObjectId, ref: User
+    },
     article: {
         type: Schema.Types.ObjectId, ref: Article
     }
-});
+},{timestamps:true})
 
-module.exports = Article_like;
+const articleLike = mongoose.model('articleLike', articleLikeSchema);
+
+module.exports = articleLike;

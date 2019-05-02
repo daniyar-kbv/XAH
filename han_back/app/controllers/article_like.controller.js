@@ -1,30 +1,30 @@
-const Comment_like = require('../models/comment_like.model.js');
-const Comment = require('../models/comment.model');
+const Article_like = require('../models/article_like.model.js');
+const Article = require('../models/article.model');
 
 import User from "../models/user.model";
 import middleware from '../../middleware';
 
 exports.create = (req, res) => {
-    Comment.findById(req.params.commentId).then(comment => {
+    Article.findById(req.params.articleId).then(article => {
         User.findById(req.decoded.userId).then(user => {
-            Comment_like.find( {user: user, comment: comment}, function (err, results) {
+            Article_like.find( {user: user, article: article}, function (err, results) {
                 if (err) {
                     res.status(500).send({
-                        message: err.message || "Some error occurred while creating the Comment_like."
+                        message: err.message || "Some error occurred while creating the Article_like."
                     });
                 }
                 if (!results.length) {
-                    const comment_like = new Comment_like({
+                    const article_like = new Article_like({
                         user: user,
-                        comment: comment
+                        article: article
                     });
                 
-                    comment_like.save()
+                    article_like.save()
                     .then(data => {
                         res.send(data);
                     }).catch(err => {
                         res.status(500).send({
-                            message: err.message || "Some error occurred while creating the Comment_like."
+                            message: err.message || "Some error occurred while creating the Article_like."
                         });
                     });
                 }
@@ -37,54 +37,54 @@ exports.create = (req, res) => {
         });
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Comment not found"
+            message: err.message || "Article not found"
         });
     });
 };
 
 exports.findAll = (req, res) => {
-    Comment_like.find({comment: req.body.comment})
-    .then(comment_likes => {
-        res.send(comment_likes);
+    Article_like.find({article: req.body.article})
+    .then(article_likes => {
+        res.send(article_likes);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while retrieving comment_likes."
+            message: err.message || "Some error occurred while retrieving article_likes."
         });
     });
 };
 
 exports.delete = (req, res) => {
-    Comment_like.findById(req.params.comment_likesId).then(comment_likes_found => {
-        if(!comment_likes_found) {
+    Article_like.findById(req.params.article_likesId).then(article_likes_found => {
+        if(!article_likes_found) {
             return res.status(404).send({
-                message: "Comment_likes not found with id " + req.params.comment_likesId
+                message: "Article_likes not found with id " + req.params.article_likesId
             });
         }
         User.findById(req.decoded.userId).then(user => {
-            let str1 = new String(comment_likes_found.user);
+            let str1 = new String(article_likes_found.user);
             let str2 = new String(user._id);
             let buf1 = Buffer.from(str1);
             let buf2 = Buffer.from(str2);
             console.log(buf1.equals(buf2));
-            if (middleware.comparison(comment_likes_found.user, user._id)){
-                Comment_like.findByIdAndDelete(req.params.comment_likesId).then( comment_likes_del => {
-                    res.send({message: "Comment_likes deleted successfully!"});
+            if (middleware.comparison(article_likes_found.user, user._id)){
+                Article_like.findByIdAndDelete(req.params.article_likesId).then( article_likes_del => {
+                    res.send({message: "Article_likes deleted successfully!"});
                 })
             }
             else{
                 return res.status(404).send({
-                    message: "Not your commentLike"
+                    message: "Not your articleLike"
                 });
             }
         });
     }).catch(err => {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
-                message: "Comment_likes not found with id " + req.params.comment_likesId
+                message: "Article_likes not found with id " + req.params.article_likesId
             });                
         }
         return res.status(500).send({
-            message: "Could not delete comment_likes with id " + req.params.comment_likesId
+            message: "Could not delete article_likes with id " + req.params.article_likesId
         });
     });
 };

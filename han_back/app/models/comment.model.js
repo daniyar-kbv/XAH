@@ -4,15 +4,16 @@ import User from './user.model';
 
 var Schema = mongoose.Schema;
 
-const Comment = mongoose.model('Comment', {
+const commentSchema = new mongoose.Schema({
     body: String,
-    date_published: Date,
     user: {
         type: Schema.Types.ObjectId, ref: User
     },
     article: {
         type: Schema.Types.ObjectId, ref: Article
     }
-});
+},{timestamps:true})
+
+const Comment = mongoose.model('Comment', commentSchema);
 
 module.exports = Comment;

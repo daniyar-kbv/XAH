@@ -1,6 +1,5 @@
 const Role = require('../models/role.model.js');
 
-// Find a single note with a noteId
 exports.create = (req, res) => {
     if(!req.body.name) {
         return res.status(400).send({

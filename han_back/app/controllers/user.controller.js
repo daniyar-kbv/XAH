@@ -1,4 +1,12 @@
 const User = require('../models/user.model');
+const express=require('express');
+const jwt=require('jsonwebtoken');
+const user=require('../models/user.model');
+const key=require("../../key");
+
+const app=express();
+
+app.use(require('body-parser').json());
 
 exports.create = (req, res) => {
 
@@ -25,3 +33,23 @@ exports.create = (req, res) => {
         });
     });
 }
+
+exports.login = (req,res) =>{
+    user.findOne({username:req.body.username}).then((user)=>{
+            user.comparePassword(req.body.password,(err,isMatch)=>{
+                if(isMatch){
+                    var token=jwt.sign({userId:user.id}, key.tokenKey);
+                    res.status(200).json({
+                        userId:user.id,
+                        username: user.username,
+                        token
+                    })
+                }
+                else{
+                    res.status(400).json({message:'Invalid Password/Username'});
+                }
+            })
+    }).catch((err)=>{
+        res.status(400).json({message:'Invalid Password/Username'});
+    })
+};
