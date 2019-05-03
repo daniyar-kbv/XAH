@@ -25,3 +25,30 @@ export const getArticles = () => (dispatch, getState) => {
             }
         );
 }
+
+export const createArticle = (data) => (dispatch, getState) => {
+
+    dispatch({
+      type: actionTypes.ACTION_CREATE_ARTICLE_STARTED
+    })
+    
+    articleApi
+        .createArticle(data)
+        .then(
+            response => {
+                response
+                    .text()
+                    .then(
+                        value => {
+                            const responseObject = JSON.parse(value);
+                            console.log(responseObject);
+                            dispatch({
+                                type: actionTypes.ACTION_CREATE_ARTICLE_SUCCESS,
+                                article: responseObject,
+                                articles: getState().article.articles
+                            });
+                        }
+                    );
+            }
+        );
+}
