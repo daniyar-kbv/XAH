@@ -15,29 +15,34 @@ exports.create = (req, res) => {
 
     User.findById(req.decoded.userId).then(user => {
         Article.findById(req.params.articleId).then(article => {
-            const comment = new Comment({
-                body: req.body.body,
-                user: user,
-                article: article
-            });
-
-            comment.save()
-            .then(data => {
-                res.send(data);
-            }).catch(err => {
-                res.status(500).send({
-                    message: err.message || "Some error occurred while creating the Comment."
+            if (article != ''){
+                const comment = new Comment({
+                    body: req.body.body,
+                    user: user,
+                    article: article
                 });
-            });
+    
+                comment.save()
+                .then(data => {
+                    res.send(data);
+                }).catch(err => {
+                    res.status(500).send({
+                        message: err.message || "Some error occurred while creating the Comment."
+                    });
+                });
+            }
+            else{
+                res.status(500).send({
+                    message: err.message || "Article not found"
+                });
+            }
         }).catch(err => {
             res.status(500).send({
-                message: err.message || "Article not found"
+                message: err.message || "Some error occurred while creating the Comment."
             });
         })
     }).catch(err => {
-        res.status(500).send({
-            message: err.message || "User not found"
-        });
+        
     })
 };
 

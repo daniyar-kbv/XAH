@@ -4,6 +4,9 @@ import '../../assets/css/theme.css'
 import incard from '../../assets/img/graphic-product-bench-thumb.jpg'
 import bigimage from '../../assets/img/photo-woman-writing.jpg'
 import commentimage from '../../assets/img/avatar-female-2.jpg'
+import * as commentActions from '../../actions/commentAction'
+import { connect } from 'react-redux';
+import Comment from './comment'
 
 class PostInCard extends Component{
     render(){
@@ -27,34 +30,6 @@ class PostInCard extends Component{
                                     <small><i className="icon-message"></i> 62</small>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        );
-    }
-}
-
-class Comment extends Component{
-    render(){
-        return(
-            <li class="list-group-item py-4">
-                <div class="media">
-                    <img alt="Image" src={commentimage} class="avatar avatar-sm" />
-                    <div class="media-body">
-                        <div class="mb-2">
-                            <span class="h6 mb-0">Kelly Fraiser</span>
-                            <span class="text-muted">Making awesome products</span>
-                        </div>
-                        <p>
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <div class="mr-2">
-                                <button class="btn btn-sm btn-outline-primary">Reply</button>
-                                <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up"></i>&nbsp;(2)</button>
-                            </div>
-                            <small class="text-muted">1st Dec 2017 • 10:15am</small>
                         </div>
                     </div>
                 </div>
@@ -158,12 +133,7 @@ class Article extends Component {
                                         </div>
                                     </form>
                                 </div>
-                                <ul class="list-group list-group-flush list-group-comments">
-                                    <Comment/>
-                                    <Comment/>
-                                    <Comment/>
-                                    <Comment/>
-                                </ul>
+                                <Comment/>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
