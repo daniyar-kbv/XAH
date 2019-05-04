@@ -15,33 +15,20 @@ const comments = (state = [], action) => {
   }
 };
 
-// const firstComment = (state = {}, action) => {
-//   switch (action.type) {
-//     case actionTypes.ACTION_GET_COMMENTS_SUCCESS:
-//       return action.comments[0];
-//     default:
-//       return state;
-//   }
-// }
-
-
-// const comment = (state = {}, action) => {
-//   switch (action.type) {
-//     case actionTypes.ACTION_CREATE_COMMENT_SUCCESS:
-//       return action.comment;
-//     case actionTypes.ACTION_CREATE_COMMENT_STARTED:
-//       return {};
-//     default:
-//       return state;
-//   }
-// };
-
-
-
-
+const comment = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.ACTION_CREATE_COMMENT_SUCCESS:
+      return action.comment;
+    case actionTypes.ACTION_CREATE_COMMENT_STARTED:
+      return {};
+    default:
+      return state;
+  }
+};
 
 const commentReducer = combineReducers({
   comments,
+  comment
 });
 
 export default commentReducer;

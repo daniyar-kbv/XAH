@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Container , Row, Col, Image} from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import './main.css';
 import '../../assets/css/theme.css';
 import magazines from './images/magazines.jpg';
@@ -9,7 +9,7 @@ import incard from '../../assets/img/graphic-product-bench-thumb.jpg';
 import ad1 from './images/landrover.png';
 import ad2 from './images/ipo.png';
 import othernewscardimg from './images/x-trail.jpg';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 class Hotnews extends Component{
     render(){
@@ -118,11 +118,11 @@ class PostInCard extends Component{
         return(
             <li>
                 <div className="media">
-                    <a href="#">
+                    <a>
                         <img alt="Image" src={incard} className="avatar avatar-square rounded mr-3" />
                     </a>
                     <div className="media-body">
-                        <a href="#">
+                        <a>
                             <span className="h6">Bench</span>
                         </a>
                         <span className="badge badge-secondary">Productivity</span>
@@ -175,7 +175,7 @@ class Middle extends Component{
                             <div>
                                 <span className="h6">Related Groups</span>
                             </div>
-                            <a href="#">View all &rsaquo;</a>
+                            <a>View all &rsaquo;</a>
                         </div>
                         <div className="card-body">
                             <ul className="list-unstyled list-spacing-sm">
@@ -200,7 +200,7 @@ class OtherNewsCard extends Component{
         return(
             <li class="col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <a href="#">
+                    <a>
                         <img class="card-img-top" src={othernewscardimg} alt="Card image cap"/>
                     </a>
                     <div class="card-body">
@@ -219,11 +219,11 @@ class OtherNewsCard extends Component{
                                 <i class="icon-dots-three-horizontal"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Share</a>
-                                <a class="dropdown-item" href="#">Comment</a>
+                                <a class="dropdown-item">Save</a>
+                                <a class="dropdown-item">Share</a>
+                                <a class="dropdown-item">Comment</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Report</a>
+                                <a class="dropdown-item">Report</a>
                             </div>
                         </div>
                     </div>
