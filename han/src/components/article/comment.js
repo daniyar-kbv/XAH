@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './article.css';
 import '../../assets/css/theme.css'
 import commentimage from '../../assets/img/avatar-female-2.jpg'
-import * as commentsActions from '../../actions/commentAction'
+import * as commentsActions from '../../actions/commentActions'
 import { connect } from 'react-redux';
 
 class Comment extends Component{

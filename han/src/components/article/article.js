@@ -4,7 +4,7 @@ import '../../assets/css/theme.css'
 import incard from '../../assets/img/graphic-product-bench-thumb.jpg'
 import bigimage from '../../assets/img/photo-woman-writing.jpg'
 import commentimage from '../../assets/img/avatar-female-2.jpg'
-import * as commentActions from '../../actions/commentAction'
+import * as commentActions from '../../actions/commentActions'
 import { connect } from 'react-redux';
 import Comment from './comment'
 
