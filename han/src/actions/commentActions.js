@@ -30,38 +30,28 @@ export const getComments = () => (dispatch, getState) => {
 
 // export const createComment = (data) => (dispatch, getState) => {
 
-//     dispatch({
-//         type: actionTypes.ACTION_CREATE_COMMENT_STARTED
-//     })
+//   dispatch({
+//     type: actionTypes.ACTION_CREATE_COMMENT_STARTED
+//   })
 
-//     commentApi
+//   commentApi
 //     .createComment(data)
 //     .then(
-//         response => {
-//             response
-//             .text()
-//             .then(
-//                 value => {
-//                 const responseObject = JSON.parse(value);
-//                 // console.log(responseObject);
-//                 dispatch({
-//                     type: actionTypes.ACTION_CREATE_COMMENT_SUCCESS,
-//                     comment: responseObject,
-//                     comments: getState().comment.comments
-//                 });
-//                 }
-//             );
-//         }
+//       response => {
+//         response
+//           .text()
+//           .then(
+//             value => {
+//               const responseObject = JSON.parse(value);
+//               // console.log(responseObject);
+//               dispatch({
+//                 type: actionTypes.ACTION_CREATE_COMMENT_SUCCESS,
+//                 comment: responseObject,
+//                 comments: getState().comment.comments
+//               });
+//             }
+//           );
+//       }
 //     )
+
 // }
-
-export const createComment = (data) => (dispatch, getState) => {
-    dispatch({
-        type: actionTypes.ACTION_CREATE_COMMENT_STARTED
-    });
-
-    commentApi.createComment({
-        body: data.body
-    }).then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
-    .catch(error => console.error(error));
-};

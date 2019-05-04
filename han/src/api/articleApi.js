@@ -1,9 +1,9 @@
-import ARTICLE_URL from '../constants/urls';
+import * as urls from '../constants/urls';
 
 // GET
 export const getArticles = () => {
     fetch(
-        ARTICLE_URL,
+        urls.ARTICLE_URL,
         {
             method: 'GET',
         }
@@ -13,7 +13,7 @@ export const getArticles = () => {
 // POST
 export const createArticle = (data) => {
     fetch(
-        ARTICLE_URL,
+        urls.ARTICLE_URL,
         {
             method: 'POST',
             body: JSON.stringify({
