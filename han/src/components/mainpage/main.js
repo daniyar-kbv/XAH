@@ -9,7 +9,7 @@ import incard from '../../assets/img/graphic-product-bench-thumb.jpg';
 import ad1 from './images/landrover.png';
 import ad2 from './images/ipo.png';
 import othernewscardimg from './images/x-trail.jpg';
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Route, Link } from "react-router-dom";
 
 class Hotnews extends Component{
     render(){
