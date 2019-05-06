@@ -28,30 +28,30 @@ export const getComments = () => (dispatch, getState) => {
 
 }
 
-// export const createComment = (data) => (dispatch, getState) => {
+export const createComment = (data) => (dispatch, getState) => {
 
-//   dispatch({
-//     type: actionTypes.ACTION_CREATE_COMMENT_STARTED
-//   })
+  dispatch({
+    type: actionTypes.ACTION_CREATE_COMMENT_STARTED
+  })
 
-//   commentApi
-//     .createComment(data)
-//     .then(
-//       response => {
-//         response
-//           .text()
-//           .then(
-//             value => {
-//               const responseObject = JSON.parse(value);
-//               // console.log(responseObject);
-//               dispatch({
-//                 type: actionTypes.ACTION_CREATE_COMMENT_SUCCESS,
-//                 comment: responseObject,
-//                 comments: getState().comment.comments
-//               });
-//             }
-//           );
-//       }
-//     )
+  commentApi
+    .createComment(data)
+    .then(
+      response => {
+        response
+          .text()
+          .then(
+            value => {
+              const responseObject = JSON.parse(value);
+              // console.log(responseObject);
+              dispatch({
+                type: actionTypes.ACTION_CREATE_COMMENT_SUCCESS,
+                comment: responseObject,
+                comments: getState().comment.comments
+              });
+            }
+          );
+      }
+    )
 
-// }
+}

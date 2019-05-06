@@ -108,7 +108,7 @@ class Article extends Component {
                             </article>
                             <hr/>
                             <h5 className="mb-4">Discussion</h5>
-                            <Comments/>
+                            <Comment/>
                         </div>
                         <div className="col-12 col-md-4">
                             <div className="card">
