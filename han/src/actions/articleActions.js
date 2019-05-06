@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 import * as articleApi from '../api/articleApi';
 
 export const getArticles = () => (dispatch, getState) => {
@@ -26,29 +26,29 @@ export const getArticles = () => (dispatch, getState) => {
         );
 }
 
-export const createArticle = (data) => (dispatch, getState) => {
+// export const createArticle = (data) => (dispatch, getState) => {
 
-    dispatch({
-      type: actionTypes.ACTION_CREATE_ARTICLE_STARTED
-    })
+//     dispatch({
+//       type: actionTypes.ACTION_CREATE_ARTICLE_STARTED
+//     })
     
-    articleApi
-        .createArticle(data)
-        .then(
-            response => {
-                response
-                    .text()
-                    .then(
-                        value => {
-                            const responseObject = JSON.parse(value);
-                            console.log(responseObject);
-                            dispatch({
-                                type: actionTypes.ACTION_CREATE_ARTICLE_SUCCESS,
-                                article: responseObject,
-                                articles: getState().article.articles
-                            });
-                        }
-                    );
-            }
-        );
-}
+//     articleApi
+//         .createArticle(data)
+//         .then(
+//             response => {
+//                 response
+//                     .text()
+//                     .then(
+//                         value => {
+//                             const responseObject = JSON.parse(value);
+//                             console.log(responseObject);
+//                             dispatch({
+//                                 type: actionTypes.ACTION_CREATE_ARTICLE_SUCCESS,
+//                                 article: responseObject,
+//                                 articles: getState().article.articles
+//                             });
+//                         }
+//                     );
+//             }
+//         );
+// }

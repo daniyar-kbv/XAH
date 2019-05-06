@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import './article.css';
+import React, { Component } from 'react'
+import './article.css'
 import '../../assets/css/theme.css'
 import incard from '../../assets/img/graphic-product-bench-thumb.jpg'
 import bigimage from '../../assets/img/photo-woman-writing.jpg'
-import commentimage from '../../assets/img/avatar-female-2.jpg'
-import * as commentActions from '../../actions/commentActions'
-import { connect } from 'react-redux';
+import * as articleActions from '../../actions/articleActions' 
+import { connect } from 'react-redux'
 import Comment from './comment'
 
 class PostInCard extends Component{
@@ -39,6 +38,12 @@ class PostInCard extends Component{
 }
 
 class Article extends Component {
+
+    componentDidMount() {
+        this.props.getArticles();
+        console.log(this.props.articles);
+    }
+
   render() {
     return (
         <div>
@@ -133,7 +138,7 @@ class Article extends Component {
                                         </div>
                                     </form>
                                 </div>
-                                <Comment/>
+                                {/* <Comment/> */}
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
@@ -200,4 +205,15 @@ class Article extends Component {
   }
 }
 
-export default Article;
+const mapStateToPropsArticle = (state) => ({
+    articles: state.article.articles,
+});
+
+const mapDispatchToPropsArticle = {
+    getArticles: articleActions.getArticles,
+}
+
+export default connect(
+    mapStateToPropsArticle,
+    mapDispatchToPropsArticle
+)(Article);
