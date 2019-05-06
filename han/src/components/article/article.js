@@ -1,41 +1,11 @@
 import React, { Component } from 'react'
 import './article.css'
 import '../../assets/css/theme.css'
-import incard from '../../assets/img/graphic-product-bench-thumb.jpg'
 import bigimage from '../../assets/img/photo-woman-writing.jpg'
 import * as articleActions from '../../actions/articleActions' 
 import { connect } from 'react-redux'
-import Comments from './comment'
-
-class PostInCard extends Component{
-    render(){
-        return(
-            <li>
-                <div className="media">
-                    <a href="#">
-                        <img alt="Image" src={incard} className="avatar avatar-square rounded mr-3" />
-                    </a>
-                    <div className="media-body">
-                        <a href="#">
-                            <span className="h6">Bench</span>
-                        </a>
-                        <span className="badge badge-secondary">Productivity</span>
-                        <div className="text-muted">
-                            <ul className="list-inline">
-                                <li className="list-inline-item">
-                                    <small><i className="icon-heart"></i> 373</small>
-                                </li>
-                                <li className="list-inline-item">
-                                    <small><i className="icon-message"></i> 62</small>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        );
-    }
-}
+import Comment from './comment'
+import PostInCard from '../postincard/postInCard'
 
 class Article extends Component {
 
@@ -53,6 +23,9 @@ class Article extends Component {
                         <div className="col">
                             <div className="media align-items-center">
                                 <div className="media-body">
+                                {this.props.articles.map(article =>
+                                    <h1>Article {article.body}</h1>
+                                    )}
                                     <h1 className="display-4">Starting Up - A Candid Documentary</h1>
                                     <span className="lead">What it’s really like trying to convert an idea into a business.</span>
                                     <div className="d-flex align-items-center">
@@ -108,7 +81,7 @@ class Article extends Component {
                             </article>
                             <hr/>
                             <h5 className="mb-4">Discussion</h5>
-                            <Comments/>
+                            <Comment/>
                         </div>
                         <div className="col-12 col-md-4">
                             <div className="card">
