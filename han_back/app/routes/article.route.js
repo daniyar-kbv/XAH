@@ -5,6 +5,8 @@ module.exports = (app) => {
 
     app.post('/articles', middleware.checkToken, middleware.checkPermission('ReadWrite'), articles.create);
 
+    // app.post('/articles', articles.create);
+
     app.get('/articles', articles.findAll);
 
     app.get('/articles/:articleId', articles.findOne);
