@@ -9,9 +9,17 @@ export const login = (data) => (dispatch, getState) => {
     userApi.login({
         username: data.username,
         password: data.password
-    }).then(data => {
-        
-        console.log(JSON.stringify(data));
+    }).then(response => {
+        // console.log(JSON.stringify(data));
+        response.text().then(
+            value => {
+                const authres = JSON.parse(value);
+                dispatch({
+                    type: actionTypes.ACTION_LOGIN_SUCCESS,
+                    authres
+                })
+            }
+        )
     })
     .catch(error => console.error(error));
 };

@@ -5,7 +5,7 @@ import incard from '../../assets/img/graphic-product-bench-thumb.jpg'
 import bigimage from '../../assets/img/photo-woman-writing.jpg'
 import * as articleActions from '../../actions/articleActions' 
 import { connect } from 'react-redux'
-import Comment from './comment'
+import Comments from './comment'
 
 class PostInCard extends Component{
     render(){

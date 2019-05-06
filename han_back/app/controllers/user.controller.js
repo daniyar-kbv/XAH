@@ -38,6 +38,7 @@ exports.login = (req,res) =>{
     user.findOne({username:req.body.username}).then((user)=>{
             user.comparePassword(req.body.password,(err,isMatch)=>{
                 if(isMatch){
+                    console.log("login success");
                     var token=jwt.sign({userId:user.id}, key.tokenKey);
                     res.status(200).json({
                         userId:user.id,
