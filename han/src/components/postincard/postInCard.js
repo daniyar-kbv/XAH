@@ -2,20 +2,20 @@ import React, { Component } from 'react'
 import incard from '../../assets/img/graphic-product-bench-thumb.jpg'
 import '../../assets/css/theme.css'
 import '../article/article.css'
-
+import { Image } from 'react-bootstrap'
 
 class PostInCard extends Component {
     render(){
         return(
             <li>
                 <div className="media">
-                    <a href="#">
-                        <img alt="Image" src={incard} className="avatar avatar-square rounded mr-3" />
-                    </a>
+                    <p>
+                        <Image src={incard} className="avatar avatar-square rounded mr-3" />
+                    </p>
                     <div className="media-body">
-                        <a href="#">
+                        <p>
                             <span className="h6">Bench</span>
-                        </a>
+                        </p>
                         <span className="badge badge-secondary">Productivity</span>
                         <div className="text-muted">
                             <ul className="list-inline">

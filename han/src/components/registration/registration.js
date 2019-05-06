@@ -42,7 +42,7 @@ class Registration extends Component {
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <span class="text-small">Уже есть аккаунт? <Link to={'./login'}><a href="#">Войти</a></Link>
+                                        <span class="text-small">Уже есть аккаунт? <Link to={'./login'}><p>Войти</p></Link>
                                         </span>
                                     </div>
                                 </div>

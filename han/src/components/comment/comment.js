@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import './article.css';
+import '../article/article.css';
 import '../../assets/css/theme.css'
 import commentimage from '../../assets/img/avatar-female-2.jpg'
 import * as commentsActions from '../../actions/commentActions'
 import * as userActions from '../../actions/userActions'
 import { connect } from 'react-redux';
+import { Image } from 'react-bootstrap'
 
 class Comments extends Component{
     
@@ -54,7 +55,7 @@ class Comments extends Component{
                     {this.props.comments.map(comment => 
                         <li className="list-group-item py-4">
                             <div className="media">
-                                <img alt="Image" src={commentimage} className="avatar avatar-sm" />
+                                <Image src={commentimage} className="avatar avatar-sm" />
                                 <div className="media-body">
                                     <div className="mb-2">
                                         <span className="h6 mb-0">{comment.user.username}</span>

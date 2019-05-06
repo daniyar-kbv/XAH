@@ -49,13 +49,13 @@ class Login extends Component {
                                                 <div className="form-group">
                                                     <label>Пароль</label>
                                                     <input className="form-control form-control-lg" id="login-password" placeholder="Введите пароль" />
-                                                        <small>Забыли пароль? <a href="#">Сбросить</a>
+                                                        <small>Забыли пароль? <p>Сбросить</p>
                                                         </small>
                                                 </div>
                                                 <div>
                                                     <div className="custom-control custom-checkbox align-items-center">
-                                                        <input type="checkbox" className="custom-control-input" value="box-1" name="box-1" checked id="check-remember"></input>
-                                                        <label className="custom-control-label text-small" for="check-remember">Запомнить меня</label>
+                                                        <input type="checkbox" className="custom-control-input" value="box-1" name="box-1"></input>
+                                                        <label className="custom-control-label text-small">Запомнить меня</label>
                                                     </div>
                                                 </div>
                                                 <div className="text-center mt-3">
@@ -66,7 +66,7 @@ class Login extends Component {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <span className="text-small">Нет аккаунта? <Link to={'./registration'}><a href="#">Зарегистрироваться</a></Link>
+                                    <span className="text-small">Нет аккаунта? <Link to={'./registration'}><p href="#">Зарегистрироваться</p></Link>
                                     </span>
                                 </div>
                             </div>

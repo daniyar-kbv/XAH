@@ -4,8 +4,9 @@ import '../../assets/css/theme.css'
 import bigimage from '../../assets/img/photo-woman-writing.jpg'
 import * as articleActions from '../../actions/articleActions' 
 import { connect } from 'react-redux'
-import Comment from './comment'
+import Comments from '../comment/comment'
 import PostInCard from '../postincard/postInCard'
+import { Image } from 'react-bootstrap'
 
 class Article extends Component {
 
@@ -24,7 +25,7 @@ class Article extends Component {
                             <div className="media align-items-center">
                                 <div className="media-body">
                                 {this.props.articles.map(article =>
-                                    <h1>Article {article.body}</h1>
+                                    <h1 key={article._id}>Article {article.body}</h1>
                                     )}
                                     <h1 className="display-4">Starting Up - A Candid Documentary</h1>
                                     <span className="lead">What it’s really like trying to convert an idea into a business.</span>
@@ -47,12 +48,12 @@ class Article extends Component {
                     <div className="row justify-content-between">
                         <div className="col-12 col-md-8 col-lg-7">
                             <figure className="figure">
-                                <img alt="Image" src={bigimage} className="img-fluid figure-img" />
+                                <Image className="img-fluid figure-img" src={bigimage} />
                                 <figcaption className="figure-caption">Figure one: Mission Control panel</figcaption>
                             </figure>
                             <article>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <a href="#">labore et dolore</a> magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                                     ex ea commodo consequat.
                                 </p>
                                 <p>
@@ -81,7 +82,7 @@ class Article extends Component {
                             </article>
                             <hr/>
                             <h5 className="mb-4">Discussion</h5>
-                            <Comment/>
+                            <Comments/>
                         </div>
                         <div className="col-12 col-md-4">
                             <div className="card">

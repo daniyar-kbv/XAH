@@ -14,14 +14,14 @@ import { BrowserRouter as Route, Link } from "react-router-dom";
 class Hotnews extends Component{
     render(){
         return(
-            <div class="row mt-5 ml-1 mr-1" id="hot-news">
+            <div className="row mt-5 ml-1 mr-1" id="hot-news">
                 <div className="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style={image(magazines)}>
                     <Link to={'./article'}>
                         <div className="d-flex align-content-between flex-wrap h-100">
                             <div className="ml-auto d-flex cat-box">
                                 <div className="bg-dark w-100">
                                     <p className="mt-2 mb-2 text-center cat-text">
-                                        <a>Авто</a>
+                                        Авто
                                     </p>
                                 </div>
                             </div>
@@ -33,29 +33,29 @@ class Hotnews extends Component{
                         </div>
                     </Link>
                 </div>
-                <div class="col-6 col-sm-6 col-lg-6">
-                    <div class="row h-50 h-50 shadow-box-small image-in" style={image(nazik)}>
-                        <div class="d-flex align-content-between flex-wrap h-100">
-                            <div class="ml-auto d-flex cat-box">
-                                <div class="bg-dark w-100">
-                                    <p class="mt-2 mb-2 text-center cat-text">Авто</p>
+                <div className="col-6 col-sm-6 col-lg-6">
+                    <div className="row h-50 h-50 shadow-box-small image-in" style={image(nazik)}>
+                        <div className="d-flex align-content-between flex-wrap h-100">
+                            <div className="ml-auto d-flex cat-box">
+                                <div className="bg-dark w-100">
+                                    <p className="mt-2 mb-2 text-center cat-text">Авто</p>
                                 </div>
                             </div>
-                            <div class="mt-auto p-2 bd-highlight">
-                                <p class="m-1 text-left hot-new-text-white hot-new-text-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div className="mt-auto p-2 bd-highlight">
+                                <p className="m-1 text-left hot-new-text-white hot-new-text-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                             </div>
                         </div>
                     </div>
-                    <div class="w-100"></div>
-                    <div class="row h-50 h-50 shadow-box-small image-in" style={image(oscar)}>
-                        <div class="d-flex align-content-between flex-wrap h-100">
-                            <div class="ml-auto d-flex cat-box">
-                                <div class="bg-dark w-100">
-                                    <p class="mt-2 mb-2 text-center cat-text">Авто</p>
+                    <div className="w-100"></div>
+                    <div className="row h-50 h-50 shadow-box-small image-in" style={image(oscar)}>
+                        <div className="d-flex align-content-between flex-wrap h-100">
+                            <div className="ml-auto d-flex cat-box">
+                                <div className="bg-dark w-100">
+                                    <p className="mt-2 mb-2 text-center cat-text">Авто</p>
                                 </div>
                             </div>
-                            <div class="mt-auto p-2 bd-highlight">
-                                <p class="m-1 text-left hot-new-text-white hot-new-text-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div className="mt-auto p-2 bd-highlight">
+                                <p className="m-1 text-left hot-new-text-white hot-new-text-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,6 @@ class SmallHotInCat extends Component{
     render(){
         return(
             <div className="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" style={image(this.props.url)}>
-                {/* <Image className="bg-image bg" src={oscar} alt="Image"/> */}
                 <p className="m-2 text-left hot-new-text-white">Lorem ipsum dolor</p>
             </div>
         );
@@ -88,7 +87,7 @@ class HotInCat extends Component{
         return(
             <div className="row cat-hot-news mb-5">
                 <div className="col-lg-8 shadow-box-big p-0 image-in">
-                <img className="bg-image bg" src={oscar} alt="Image"/>
+                <Image className="bg-image bg" src={oscar}/>
                     <div className="d-flex align-content-between flex-wrap h-100">
                         <div className="mr-auto d-flex cat-box">
                             <div className="bg-dark w-100">
@@ -198,32 +197,32 @@ class Middle extends Component{
 class OtherNewsCard extends Component{
     render(){
         return(
-            <li class="col-12 col-md-6 col-lg-4">
-                <div class="card">
+            <li className="col-12 col-md-6 col-lg-4">
+                <div className="card">
                     <a>
-                        <img class="card-img-top" src={othernewscardimg} alt="Card image cap"/>
+                        <img className="card-img-top" src={othernewscardimg} alt="Card image cap"/>
                     </a>
-                    <div class="card-body">
-                        <h4 class="card-title">Sidekick</h4>
-                        <p class="card-text">Holistic fitness tracking</p>
+                    <div className="card-body">
+                        <h4 className="card-title">Sidekick</h4>
+                        <p className="card-text">Holistic fitness tracking</p>
                     </div>
-                    <div class="card-footer card-footer-borderless d-flex justify-content-between">
-                        <div class="text-small">
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
-                                <li class="list-inline-item"><i class="icon-message"></i> 14</li>
+                    <div className="card-footer card-footer-borderless d-flex justify-content-between">
+                        <div className="text-small">
+                            <ul className="list-inline">
+                                <li className="list-inline-item"><i className="icon-heart"></i> 221</li>
+                                <li className="list-inline-item"><i className="icon-message"></i> 14</li>
                             </ul>
                         </div>
-                        <div class="dropup">
-                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="SidekickButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="icon-dots-three-horizontal"></i>
+                        <div className="dropup">
+                            <button className="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="SidekickButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i className="icon-dots-three-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
-                                <a class="dropdown-item">Save</a>
-                                <a class="dropdown-item">Share</a>
-                                <a class="dropdown-item">Comment</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item">Report</a>
+                            <div className="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
+                                <a className="dropdown-item">Save</a>
+                                <a className="dropdown-item">Share</a>
+                                <a className="dropdown-item">Comment</a>
+                                <div className="dropdown-divider"></div>
+                                <a className="dropdown-item">Report</a>
                             </div>
                         </div>
                     </div>
@@ -236,8 +235,8 @@ class OtherNewsCard extends Component{
 class OtherNews extends Component{
     render(){
         return(
-            <div class="m-1 mt-5">
-                <ul class="row feature-list feature-list-sm">
+            <div className="m-1 mt-5">
+                <ul className="row feature-list feature-list-sm">
                     <OtherNewsCard/>
                     <OtherNewsCard/>
                     <OtherNewsCard/>

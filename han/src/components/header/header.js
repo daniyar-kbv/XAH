@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
-import '../../assets/css/theme.css'
-import '../../assets/css/entypo.css'
-import '../../assets/css/socicon.css'
-import './header.css'
-import navimage from '../../assets/img/avatar-male-3.jpg'
+import '../../assets/css/theme.css';
+import '../../assets/css/entypo.css';
+import '../../assets/css/socicon.css';
+import './header.css';
 import { BrowserRouter as Router, Route, Link} from "react-router-dom";
-import Category from '../category/category';
-
-class CategoryInNav extends Component {
-    render() {
-        return(
-            <li className="nav-item">
-                <Link to={this.props.link}><a className="nav-link">{this.props.name}</a></Link>
-            </li>
-        )
-    }
-}
+import CategoryInNav from '../categoryinnav/categoryinnav';
 
 class Header extends Component {
     render() {
@@ -71,7 +60,7 @@ class Header extends Component {
                                                 <input className="form-control w-100" type="search" placeholder="Search" aria-label="Search"/>
                                             </form>
                                             <li className="col-sm-2">
-                                                <Link to={'./login'}><h5><a className="nav-link">Войти</a></h5></Link>
+                                                <Link to={'./login'}><h5><p className="nav-link">Войти</p></h5></Link>
                                             </li>
                                         </ul>
                                     </div>
