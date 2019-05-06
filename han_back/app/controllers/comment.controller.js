@@ -13,7 +13,8 @@ exports.create = (req, res) => {
         });
     }
 
-    User.findById(req.decoded.userId).then(user => {
+    // User.findById(req.decoded.userId).then(user => {
+    User.findById("5ccb30fc51662f37385c2e06").then(user => {
         Article.findById(req.params.articleId).then(article => {
             if (article != ''){
                 const comment = new Comment({

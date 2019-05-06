@@ -3,4 +3,6 @@ module.exports = (app) => {
 
     app.post('/register', users.create);
     app.post('/login', users.login);
+    app.get('/users/:userId', users.findOne);
+
 }

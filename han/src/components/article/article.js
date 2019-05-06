@@ -47,20 +47,20 @@ class Article extends Component {
   render() {
     return (
         <div>
-            <section class="bg-white space-sm">
-                <div class="container">
-                    <div class="row justify-content-between">
-                        <div class="col">
-                            <div class="media align-items-center">
-                                <div class="media-body">
-                                    <h1 class="display-4">Starting Up - A Candid Documentary</h1>
-                                    <span class="lead">What it’s really like trying to convert an idea into a business.</span>
-                                    <div class="d-flex align-items-center">
-                                        <span class="badge badge-secondary mr-3">Business</span>
-                                        <span class="badge badge-secondary mr-3">Lifestyle</span>
-                                        <ul class="list-inline text-small d-inline-block">
-                                            <li class="list-inline-item"><i class="icon-thumbs-up"></i> 214</li>
-                                            <li class="list-inline-item"><i class="icon-message"></i> 6</li>
+            <section className="bg-white space-sm">
+                <div className="container">
+                    <div className="row justify-content-between">
+                        <div className="col">
+                            <div className="media align-items-center">
+                                <div className="media-body">
+                                    <h1 className="display-4">Starting Up - A Candid Documentary</h1>
+                                    <span className="lead">What it’s really like trying to convert an idea into a business.</span>
+                                    <div className="d-flex align-items-center">
+                                        <span className="badge badge-secondary mr-3">Business</span>
+                                        <span className="badge badge-secondary mr-3">Lifestyle</span>
+                                        <ul className="list-inline text-small d-inline-block">
+                                            <li className="list-inline-item"><i className="icon-thumbs-up"></i> 214</li>
+                                            <li className="list-inline-item"><i className="icon-message"></i> 6</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -69,13 +69,13 @@ class Article extends Component {
                     </div>
                 </div>
             </section>
-            <section class="space-sm">
-                <div class="container">
-                    <div class="row justify-content-between">
-                        <div class="col-12 col-md-8 col-lg-7">
-                            <figure class="figure">
-                                <img alt="Image" src={bigimage} class="img-fluid figure-img" />
-                                <figcaption class="figure-caption">Figure one: Mission Control panel</figcaption>
+            <section className="space-sm">
+                <div className="container">
+                    <div className="row justify-content-between">
+                        <div className="col-12 col-md-8 col-lg-7">
+                            <figure className="figure">
+                                <img alt="Image" src={bigimage} className="img-fluid figure-img" />
+                                <figcaption className="figure-caption">Figure one: Mission Control panel</figcaption>
                             </figure>
                             <article>
                                 <p>
@@ -107,86 +107,55 @@ class Article extends Component {
                                 </ul>
                             </article>
                             <hr/>
-                            <h5 class="mb-4">Discussion</h5>
-                            <div class="card">
-                                <div class="card-header bg-secondary d-flex justify-content-between">
-                                    <button class="btn btn-secondary" type="button" data-target="#comment-reply" data-toggle="collapse" aria-expanded="false" aria-controls="comment-reply">Leave a comment</button>
-                                    <form class="d-flex align-items-center">
-                                        <span class="mr-2 text-muted text-small text-nowrap">Sort by:</span>
-                                        <select class="custom-select">
-                                            <option value="alpha">Alphabetical</option>
-                                            <option value="old-new" selected>Newest</option>
-                                            <option value="new-old">Popular</option>
-                                            <option value="recent">Recently Updated</option>
-                                        </select>
-                                    </form>
-                                </div>
-                                <div class="collapse" id="comment-reply">
-                                    <form class="card-body">
-                                        <div class="form-group">
-                                            <textarea class="form-control from-control-lg" id="comment-reply-text" name="comment-reply" rows="4" placeholder="Type your comment here"></textarea>
-                                        </div>
-                                        <div class="mb-2">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="notify-reply" id="check-notify"/>
-                                                <label class="custom-control-label text-small" for="check-notify">Notify me when someone replies</label>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <button type="submit" class="btn btn-success mr-3">Submit comment</button>
-                                            <a href="#comment-reply" class="text-small text-muted" data-toggle="collapse" aria-expanded="true" aria-controls="comment-reply">Cancel</a>
-                                        </div>
-                                    </form>
-                                </div>
-                                {/* <Comment/> */}
-                            </div>
+                            <h5 className="mb-4">Discussion</h5>
+                            <Comments/>
                         </div>
-                        <div class="col-12 col-md-4">
-                            <div class="card">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="d-flex justify-content-between">
-                                            <div><i class="icon-text-document mr-1"></i> Created</div>
+                        <div className="col-12 col-md-4">
+                            <div className="card">
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">
+                                        <div className="d-flex justify-content-between">
+                                            <div><i className="icon-text-document mr-1"></i> Created</div>
                                             <span>17/11/2017</span>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <div class="d-flex justify-content-between">
-                                            <div><i class="icon-edit mr-1"></i> Last updated</div>
+                                    <li className="list-group-item">
+                                        <div className="d-flex justify-content-between">
+                                            <div><i className="icon-edit mr-1"></i> Last updated</div>
                                             <span>23/12/2017</span>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <div class="d-flex justify-content-between">
-                                            <div><i class="icon-thumbs-up mr-1"></i> Likes</div>
+                                    <li className="list-group-item">
+                                        <div className="d-flex justify-content-between">
+                                            <div><i className="icon-thumbs-up mr-1"></i> Likes</div>
                                             <span>214</span>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <div class="d-flex justify-content-between">
-                                            <div><i class="icon-share mr-1"></i> Shares</div>
+                                    <li className="list-group-item">
+                                        <div className="d-flex justify-content-between">
+                                            <div><i className="icon-share mr-1"></i> Shares</div>
                                             <span>52</span>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="card">
-                                    <div class="card-header d-flex justify-content-between">
+                            <div className="card">
+                                    <div className="card-header d-flex justify-content-between">
                                             <div>
-                                                <span class="h6">Your Ads here</span>
+                                                <span className="h6">Your Ads here</span>
                                             </div>
                                         </div>
-                                <img class="ad w-100 h-100" src="assets/img/graphic-product-kin.jpg" alt=""/>
+                                <img className="ad w-100 h-100" src="assets/img/graphic-product-kin.jpg" alt=""/>
                             </div>
-                            <div class="card">
-                                <div class="card-header d-flex justify-content-between">
+                            <div className="card">
+                                <div className="card-header d-flex justify-content-between">
                                     <div>
-                                        <span class="h6">Related Articles</span>
+                                        <span className="h6">Related Articles</span>
                                     </div>
                                     <a href="#">View all &rsaquo;</a>
                                 </div>
-                                <div class="card-body">
-                                    <ul class="list-unstyled list-spacing-sm">
+                                <div className="card-body">
+                                    <ul className="list-unstyled list-spacing-sm">
 
                                         <PostInCard/>
                                         <PostInCard/>
