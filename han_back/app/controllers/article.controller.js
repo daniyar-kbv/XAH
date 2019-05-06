@@ -37,6 +37,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     Article.find()
     .then(articles => {
+        console.log('get articles success');
         res.send(articles);
     }).catch(err => {
         res.status(500).send({

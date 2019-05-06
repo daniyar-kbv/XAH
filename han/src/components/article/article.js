@@ -9,10 +9,10 @@ import PostInCard from '../postincard/postInCard'
 
 class Article extends Component {
 
-    // componentDidMount() {
-    //     this.props.getArticles();
-    //     console.log(this.props.articles);
-    // }
+    componentDidMount() {
+        this.props.getArticles();
+        console.log(this.props.articles);
+    }
 
   render() {
     return (
@@ -23,6 +23,9 @@ class Article extends Component {
                         <div className="col">
                             <div className="media align-items-center">
                                 <div className="media-body">
+                                {this.props.articles.map(article =>
+                                    <h1>Article {article.body}</h1>
+                                    )}
                                     <h1 className="display-4">Starting Up - A Candid Documentary</h1>
                                     <span className="lead">What it’s really like trying to convert an idea into a business.</span>
                                     <div className="d-flex align-items-center">

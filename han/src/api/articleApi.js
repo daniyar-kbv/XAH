@@ -1,13 +1,13 @@
 import * as urls from '../constants/urls';
 
-export const getArticles = () => {
+export const getArticles = () => (
     fetch(
-        "http://localhost:8000/articles",
+        urls.ARTICLE_URL,
         {
-            method: 'GET',
+        method: 'GET',
         }
     )
-}
+)
 
 // export const createArticle = (data) => {
 //     fetch(
