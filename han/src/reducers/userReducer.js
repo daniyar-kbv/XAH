@@ -12,8 +12,20 @@ const user = (state = {}, action) => {
   }
 };
 
+const login = (state = {}, action) => {
+    switch (action.type) {
+      case actionTypes.ACTION_LOGIN_SUCCESS:
+        return action.login;
+      case actionTypes.ACTION_LOGIN_STARTED:
+        return {};
+      default:
+        return state;
+    }
+  };
+
 const userReducer = combineReducers({
     user,
+    login
 });
   
 export default userReducer;

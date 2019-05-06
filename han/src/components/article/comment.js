@@ -21,7 +21,7 @@ class Comments extends Component{
 
     handleCreateComment() {
         let data = {
-            body: "new comment"
+            body: document.getElementById("comment-reply-text").value
         }
         this.props.createComment(data);
     }
@@ -32,7 +32,7 @@ class Comments extends Component{
                 <div id="comment-reply">
                     <form className="card-body">
                         <div className="form-group">
-                            {/* <textarea className="form-control from-control-lg" id="comment-reply-text" name="comment-reply" rows="4" placeholder="Type your comment here"></textarea> */}
+                            <textarea className="form-control from-control-lg" id="comment-reply-text" name="comment-reply" rows="4" placeholder="Type your comment here"></textarea>
                         </div>
                         <div className="d-flex align-items-center">
                             <button type="submit" className="btn btn-success mr-3" onClick={this.handleCreateComment}>Submit comment</button>
