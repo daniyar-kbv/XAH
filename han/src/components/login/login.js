@@ -13,6 +13,8 @@ class Login extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props.authres)
+        // localStorage.setItem("ad", this.props.authres)
     }
     
     handleLogin() {
@@ -77,6 +79,7 @@ class Login extends Component {
 }
 
 const mapStateToPropsComment = (state) => ({
+    authres: state.authres
 })
 
 const mapDispatchToPropsComment = {

@@ -21,5 +21,8 @@ export const login = (data)  => (
         referrer: "no-referrer",
         body: JSON.stringify(data),
     })
+    .then(response => {
+        response.json();
+    })
 )
   

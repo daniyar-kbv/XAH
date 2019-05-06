@@ -15,7 +15,7 @@ const user = (state = {}, action) => {
 const login = (state = {}, action) => {
     switch (action.type) {
       case actionTypes.ACTION_LOGIN_SUCCESS:
-        return action.login;
+        return action.authres;
       case actionTypes.ACTION_LOGIN_STARTED:
         return {};
       default:

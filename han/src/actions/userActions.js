@@ -10,7 +10,6 @@ export const login = (data) => (dispatch, getState) => {
         username: data.username,
         password: data.password
     }).then(response => {
-        // console.log(JSON.stringify(data));
         response.text().then(
             value => {
                 const authres = JSON.parse(value);
