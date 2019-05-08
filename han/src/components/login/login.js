@@ -47,14 +47,23 @@ class Login extends Component {
                                             <span>Войдите в свой аккаунт для продолжения</span>
                                         </div>
                                         <div className="row no-gutters justify-content-center">
-                                            {/* <form onSubmit={this.handleSubmit} className="text-left col-lg-8 dark-form">
+                                            <form onSubmit={this.handleSubmit} className="text-left col-lg-8 dark-form">
                                                 <div className="form-group">
                                                     <label>Имя пользователя</label>
-                                                    <input value={this.state.username} onChange={this.handleChange} className="form-control form-control-lg"id="login-username" placeholder="Имя пользователя" />
+                                                    <input 
+                                                        name='username'
+                                                        value={this.state.username} 
+                                                        onChange={this.handleChange} 
+                                                        className="form-control form-control-lg"id="login-username" 
+                                                        placeholder="Имя пользователя" />
                                                 </div>
                                                 <div className="form-group">
                                                     <label>Пароль</label>
-                                                    <input value={this.state.password} onChange={this.handleChange} className="form-control form-control-lg" id="login-password" placeholder="Введите пароль" />
+                                                    <input 
+                                                        value={this.state.password} 
+                                                        onChange={this.handleChange} 
+                                                        className="form-control form-control-lg" id="login-password" 
+                                                        placeholder="Введите пароль" />
                                                         <small>Забыли пароль? <p>Сбросить</p>
                                                         </small>
                                                 </div>
@@ -67,7 +76,7 @@ class Login extends Component {
                                                 <div className="text-center mt-3">
                                                     <button type="submit" className="btn btn-lg btn-primary btn-block">Войти</button>
                                                 </div>
-                                            </form> */}
+                                            </form>
                                             <form onSubmit={this.handleSubmit}>
                                                 <h1>Login</h1>
 
