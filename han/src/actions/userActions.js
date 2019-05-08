@@ -1,73 +1,56 @@
 import * as actionTypes from '../constants/actionTypes';
 import * as userApi from '../api/userApi';
 
-// export const login = (data) => (dispatch, getState) => {
-//     dispatch({
-//         type: actionTypes.ACTION_LOGIN_STARTED
-//     });
-
-//     userApi.login({
-//         username: data.username,
-//         password: data.password
-//     }).then(response => {
-//         response.text().then(
-//             value => {
-//                 const authres = JSON.parse(value);
-//                 dispatch({
-//                     type: actionTypes.ACTION_LOGIN_SUCCESS,
-//                     authres
-//                 })
-//             }
-//         )
-//     })
-//     .catch(error => console.error(error));
-// };
-
 export const getUser = (url) => (dispatch, getState) => {
 
-  dispatch({
-    type: actionTypes.ACTION_GET_USER_STARTED
-  })
+    dispatch({
+        type: actionTypes.ACTION_GET_USER_STARTED
+    })
 
-  userApi
-    .getUser(url)
-    .then(
-      response => {
-        response
-          .text()
-          .then(
-            value => {
-              const user = JSON.parse(value);
-              dispatch({
-                type: actionTypes.ACTION_GET_USER_SUCCESS,
-                user,
-              });
+    userApi
+        .getUser(url)
+        .then(
+            response => {
+                response
+                    .text()
+                    .then(
+                        value => {
+                            const user = JSON.parse(value);
+                            dispatch({
+                                type: actionTypes.ACTION_GET_USER_SUCCESS,
+                                user,
+                            });
+                        }
+                    );
             }
-          );
-      }
-    )
+        )
+}
 
+export const userPostFetch = user => {
+    return dispatch => {
+        return userApi.register(user)
+            .then(data => {
+                if (data.message) {
+                    console.log('reg error')
+                } else {
+                    localStorage.setItem("JWT", data.token)
+                    dispatch(loginUser(data.user))
+                }
+            })
+    }
 }
 
 export const userLoginFetch = user => {
     return dispatch => {
-        return fetch("http://localhost:8000/login", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                // Accept: 'application/json',
-            },
-            body: JSON.stringify(user)
-            })
-            .then(resp => resp.json())
+        return userApi.login(user)
             .then(data => {
-            if (data.message) {
-                console.log(data.message)
-            } else {
-                localStorage.setItem("JWT", data.token)
-                dispatch(loginUser(data.user))
-            }
-        })
+                if (data.message) {
+                    console.log(data.message)
+                } else {
+                    localStorage.setItem("JWT", data.token)
+                    dispatch(loginUser(data.user))
+                }
+            })
     }
 }
 

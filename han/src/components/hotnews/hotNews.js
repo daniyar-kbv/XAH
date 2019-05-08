@@ -6,8 +6,18 @@ import nazik from '../mainpage/images/Nazik.jpg';
 import oscar from '../mainpage/images/oscar.jpg';
 import { Link } from "react-router-dom";
 import * as functions from '../../helpFunctions'
+import * as articleActions from '../../actions/articleActions'
+import { connect } from 'react-redux'
 
 class Hotnews extends Component{
+
+    componentDidMount() {
+        this.props.getArticles();
+        this.props.articles.map(article => {
+            console.log(article.body)
+        })
+    }
+
     render(){
         return(
             <div className="row mt-5 ml-1 mr-1" id="hot-news">
@@ -61,4 +71,15 @@ class Hotnews extends Component{
     }
 }
 
-export default Hotnews
+const mapStateToPropsArticle = (state) => ({
+    articles: state.article.articles,
+});
+
+const mapDispatchToPropsArticle = {
+    getArticles: articleActions.getArticles,
+}
+
+export default connect(
+    mapStateToPropsArticle,
+    mapDispatchToPropsArticle
+)(Hotnews);
