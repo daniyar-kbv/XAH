@@ -13,7 +13,7 @@ class Login extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.authres)
+        // console.log(this.props.authres)
         // localStorage.setItem("ad", this.props.authres)
     }
     

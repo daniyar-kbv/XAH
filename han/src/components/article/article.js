@@ -126,7 +126,7 @@ class Article extends Component {
                                     <div>
                                         <span className="h6">Related Articles</span>
                                     </div>
-                                    <a href="#">View all &rsaquo;</a>
+                                    <p>View all &rsaquo;</p>
                                 </div>
                                 <div className="card-body">
                                     <ul className="list-unstyled list-spacing-sm">

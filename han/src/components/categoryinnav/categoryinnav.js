@@ -3,7 +3,7 @@ import '../../assets/css/theme.css';
 import '../../assets/css/entypo.css';
 import '../../assets/css/socicon.css';
 import '../header/header.css';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 
 
 class CategoryInNav extends Component {

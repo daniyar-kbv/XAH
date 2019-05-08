@@ -53,7 +53,7 @@ class Comments extends Component{
                 </div>
                 <ul className="list-group list-group-flush list-group-comments" id="list">
                     {this.props.comments.map(comment => 
-                        <li className="list-group-item py-4">
+                        <li className="list-group-item py-4" key={comment._id}>
                             <div className="media">
                                 <Image src={commentimage} className="avatar avatar-sm" />
                                 <div className="media-body">
