@@ -55,6 +55,7 @@ exports.findOne = (req, res) => {
             });            
         }
         res.send(article);
+        console.log('get article success')
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
@@ -66,6 +67,18 @@ exports.findOne = (req, res) => {
         });
     });
 };
+
+exports.findNum = (req, res) => {
+    Article.find()
+    .then(articles => {
+        console.log('get articles success');
+        res.send(articles[req.params.num]);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving articles."
+        });
+    });
+}
 
 exports.update = (req, res) => {
     if(!req.body.title || !req.body.body) {

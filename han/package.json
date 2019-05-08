@@ -40,6 +40,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "redux-devtools": "^3.5.0"
   }
 }

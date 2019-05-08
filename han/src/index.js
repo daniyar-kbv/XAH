@@ -5,8 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import store from './store'
+import "core-js/modules/es6.promise";
+import "core-js/modules/es6.array.iterator";
 
 const store_store = store();
+
 
 ReactDOM.render(
     <Provider store={store_store}>

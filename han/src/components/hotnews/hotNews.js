@@ -8,22 +8,21 @@ import { Link } from "react-router-dom";
 import * as functions from '../../helpFunctions'
 import * as articleActions from '../../actions/articleActions'
 import { connect } from 'react-redux'
+import * as images from '../../assets/images'
 
 class Hotnews extends Component{
 
     componentDidMount() {
-        this.props.getArticles();
-        this.props.articles.map(article => {
-            console.log(article.body)
-        })
+        this.props.getArticles()
+        console.log(magazines)
     }
 
     render(){
         return(
             <div className="row mt-5 ml-1 mr-1" id="hot-news">
-                <div className="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style={functions.image(magazines)}>
-                    <Link to={'./article'}>
-                        <div className="d-flex align-content-between flex-wrap h-100">
+                <div className="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style={functions.image(images.b1)}>
+                    <Link to={{ pathname: './article', state: { articleId: this.props.firstBusinessArticle._id} }}>
+                        <div className="d-flex align-items-end flex-column h-100">
                             <div className="ml-auto d-flex cat-box">
                                 <div className="bg-dark w-100">
                                     <p className="mt-2 mb-2 text-center cat-text">
@@ -32,9 +31,7 @@ class Hotnews extends Component{
                                 </div>
                             </div>
                             <div className="mt-auto p-2 bd-highlight">
-                                <p className="m-1 text-left hot-new-text hot-new-text-white image-in">Lorem ipsum dolor
-                                    sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua</p>
+                                <p className="m-1 text-left hot-new-text hot-new-text-white image-in">{this.props.firstBusinessArticle.title}</p>
                             </div>
                         </div>
                     </Link>
@@ -73,6 +70,7 @@ class Hotnews extends Component{
 
 const mapStateToPropsArticle = (state) => ({
     articles: state.article.articles,
+    firstBusinessArticle: state.article.firstBusinessArticle
 });
 
 const mapDispatchToPropsArticle = {

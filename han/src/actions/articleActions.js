@@ -27,54 +27,27 @@ export const getArticles = () => (dispatch, getState) => {
 
 }
 
-export const getArticle = (num) => (dispatch, getState) => {
+export const getArticle = (articleId) => (dispatch, getState) => {
 
     dispatch({
-        type: actionTypes.ACTION_GET_ARTICLES_STARTED
+        type: actionTypes.ACTION_GET_ARTICLE_STARTED
     })
 
     articleApi
-        .getArticle(num)
+        .getArticle(articleId)
         .then(
             response => {
                 response
                     .text()
                     .then(
                         value => {
-                            const articles = JSON.parse(value);
+                            const article = JSON.parse(value);
                             dispatch({
-                                type: actionTypes.ACTION_GET_ARTICLES_SUCCESS,
-                                articles,
+                                type: actionTypes.ACTION_GET_ARTICLE_SUCCESS,
+                                article,
                             });
                         }
                     );
             }
         )
 }
-
-// export const createArticle = (data) => (dispatch, getState) => {
-
-//     dispatch({
-//       type: actionTypes.ACTION_CREATE_ARTICLE_STARTED
-//     })
-
-//     articleApi
-//         .createArticle(data)
-//         .then(
-//             response => {
-//                 response
-//                     .text()
-//                     .then(
-//                         value => {
-//                             const responseObject = JSON.parse(value);
-//                             console.log(responseObject);
-//                             dispatch({
-//                                 type: actionTypes.ACTION_CREATE_ARTICLE_SUCCESS,
-//                                 article: responseObject,
-//                                 articles: getState().article.articles
-//                             });
-//                         }
-//                     );
-//             }
-//         );
-// }

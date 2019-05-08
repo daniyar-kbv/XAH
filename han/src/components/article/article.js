@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './article.css'
 import '../../assets/css/theme.css'
-import bigimage from '../../assets/img/photo-woman-writing.jpg'
+import bigimage from '../../assets/images/b1.jpg'
 import * as articleActions from '../../actions/articleActions'
 import { connect } from 'react-redux'
 import Comments from '../comment/comment'
@@ -11,8 +11,8 @@ import { Image } from 'react-bootstrap'
 class Article extends Component {
 
     componentDidMount() {
-        this.props.getArticles();
-        console.log(this.props.articles);
+        const {articleId} = this.props.location.state
+        this.props.getArticle(articleId)
     }
 
     render() {
@@ -24,11 +24,9 @@ class Article extends Component {
                             <div className="col">
                                 <div className="media align-items-center">
                                     <div className="media-body">
-                                        <h1 className="display-4">Starting Up - A Candid Documentary</h1>
-                                        <span className="lead">What it’s really like trying to convert an idea into a business.</span>
+                                        <h1 className="display-4">{this.props.article.title}</h1>
                                         <div className="d-flex align-items-center">
                                             <span className="badge badge-secondary mr-3">Business</span>
-                                            <span className="badge badge-secondary mr-3">Lifestyle</span>
                                             <ul className="list-inline text-small d-inline-block">
                                                 <li className="list-inline-item"><i className="icon-thumbs-up"></i> 214</li>
                                                 <li className="list-inline-item"><i className="icon-message"></i> 6</li>
@@ -46,36 +44,11 @@ class Article extends Component {
                             <div className="col-12 col-md-8 col-lg-7">
                                 <figure className="figure">
                                     <Image className="img-fluid figure-img" src={bigimage} />
-                                    <figcaption className="figure-caption">Figure one: Mission Control panel</figcaption>
                                 </figure>
                                 <article>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat.
-                                </p>
-                                    <p>
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                        sit aspernatur aut odit aut fugit
-                                </p>
-                                    <p>
-                                        Rerum facilis est et expedita distinctio. Nam
-                                    <abbr title="Hyper Text Markup Language">HTML</abbr>tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut
-                                        officiis debitis aut rerum necessitatibus saepe eveniet ut.
-                                </p>
-                                    <ul>
-                                        <li>
-                                            Temporibus autem quibusdam
-                                    </li>
-                                        <li>
-                                            Saepe eveniet ut et voluptates repudiandae sint
-                                    </li>
-                                        <li>
-                                            Nemo enim ipsam voluptatem quia voluptas
-                                    </li>
-                                        <li>
-                                            Atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
-                                    </li>
-                                    </ul>
+                                        {this.props.article.title}
+                                    </p>
                                 </article>
                                 <hr />
                                 <h5 className="mb-4">Discussion</h5>
@@ -87,25 +60,19 @@ class Article extends Component {
                                         <li className="list-group-item">
                                             <div className="d-flex justify-content-between">
                                                 <div><i className="icon-text-document mr-1"></i> Created</div>
-                                                <span>17/11/2017</span>
+                                                <span>{this.props.article.createdAt}</span>
                                             </div>
                                         </li>
                                         <li className="list-group-item">
                                             <div className="d-flex justify-content-between">
                                                 <div><i className="icon-edit mr-1"></i> Last updated</div>
-                                                <span>23/12/2017</span>
+                                                <span>{this.props.article.updatedAt}</span>
                                             </div>
                                         </li>
                                         <li className="list-group-item">
                                             <div className="d-flex justify-content-between">
                                                 <div><i className="icon-thumbs-up mr-1"></i> Likes</div>
                                                 <span>214</span>
-                                            </div>
-                                        </li>
-                                        <li className="list-group-item">
-                                            <div className="d-flex justify-content-between">
-                                                <div><i className="icon-share mr-1"></i> Shares</div>
-                                                <span>52</span>
                                             </div>
                                         </li>
                                     </ul>
@@ -146,11 +113,11 @@ class Article extends Component {
 }
 
 const mapStateToPropsArticle = (state) => ({
-    articles: state.article.articles,
+    article: state.article.article
 });
 
 const mapDispatchToPropsArticle = {
-    getArticles: articleActions.getArticles,
+    getArticle: articleActions.getArticle,
 }
 
 export default connect(

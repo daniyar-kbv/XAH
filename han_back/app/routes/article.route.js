@@ -11,6 +11,8 @@ module.exports = (app) => {
 
     app.get('/articles/:articleId', articles.findOne);
 
+    app.get('articles/one/:num', articles.findNum);
+
     app.put('/articles/:articleId', middleware.checkToken, middleware.checkPermission('ReadWrite'), articles.update);
 
     app.delete('/articles/:articleId', middleware.checkToken, middleware.checkPermission('ReadWrite'), articles.delete);

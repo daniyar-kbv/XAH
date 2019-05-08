@@ -9,6 +9,15 @@ export const getArticles = () => (
     )
 )
 
+export const getArticle = (articleId) => (
+    fetch(
+        urls.ARTICLE_URL + articleId,
+        {
+        method: 'GET',
+        }
+    )
+)
+
 // export const createArticle = (data) => {
 //     fetch(
 //         urls.ARTICLE_URL,
