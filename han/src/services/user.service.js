@@ -1,4 +1,4 @@
-import { authHeader } from '../_helpers';
+import { authHeader } from '../helpers/auth-header';
 import * as urls from '../constants/urls'
 
 export const userService = {

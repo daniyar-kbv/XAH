@@ -12,6 +12,19 @@ const user = (state = {}, action) => {
   }
 };
 
+const initialState = {
+    currentUser: {}
+}
+
+function reducer(state = initialState, action) {
+    switch (action.type) {
+        case 'LOGIN_USER':
+            return {...state, currentUser: action.payload}
+        default:
+            return state;
+    }
+}
+
 const login = (state = {}, action) => {
     switch (action.type) {
       case actionTypes.ACTION_LOGIN_SUCCESS:
@@ -25,7 +38,8 @@ const login = (state = {}, action) => {
 
 const userReducer = combineReducers({
     user,
-    login
+    login,
+    reducer
 });
   
 export default userReducer;

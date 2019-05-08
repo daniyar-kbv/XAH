@@ -5,24 +5,30 @@ import * as userActions from "../../actions/userActions";
 import { connect } from 'react-redux';
 
 class Login extends Component {
-    
-    constructor(props){
+    state = {
+        username: "",
+        password: ""
+    }
+
+    constructor(props) {
         super(props);
-        
-        this.handleLogin = this.handleLogin.bind(this);
+
+        // this.handleLogin = this.handleLogin.bind(this);
     }
 
     componentDidMount() {
-        // console.log(this.props.authres)
-        // localStorage.setItem("ad", this.props.authres)
     }
-    
-    handleLogin() {
-        let data = {
-            username: "write",
-            password: "Qwerty123"
-        }
-        this.props.login(data);
+
+    handleChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    }
+
+    handleSubmit = event => {
+        event.preventDefault()
+        this.props.userLoginFetch(this.state)
+        // console.log(JSON.stringify({this.state}))
     }
 
     render() {
@@ -41,14 +47,14 @@ class Login extends Component {
                                             <span>Войдите в свой аккаунт для продолжения</span>
                                         </div>
                                         <div className="row no-gutters justify-content-center">
-                                            <form className="text-left col-lg-8 dark-form">
+                                            {/* <form onSubmit={this.handleSubmit} className="text-left col-lg-8 dark-form">
                                                 <div className="form-group">
                                                     <label>Имя пользователя</label>
-                                                    <input className="form-control form-control-lg"id="login-username" placeholder="Имя пользователя" />
+                                                    <input value={this.state.username} onChange={this.handleChange} className="form-control form-control-lg"id="login-username" placeholder="Имя пользователя" />
                                                 </div>
                                                 <div className="form-group">
                                                     <label>Пароль</label>
-                                                    <input className="form-control form-control-lg" id="login-password" placeholder="Введите пароль" />
+                                                    <input value={this.state.password} onChange={this.handleChange} className="form-control form-control-lg" id="login-password" placeholder="Введите пароль" />
                                                         <small>Забыли пароль? <p>Сбросить</p>
                                                         </small>
                                                 </div>
@@ -59,8 +65,30 @@ class Login extends Component {
                                                     </div>
                                                 </div>
                                                 <div className="text-center mt-3">
-                                                    <button type="submit" className="btn btn-lg btn-primary btn-block" onClick={this.handleLogin}>Войти</button>
+                                                    <button type="submit" className="btn btn-lg btn-primary btn-block">Войти</button>
                                                 </div>
+                                            </form> */}
+                                            <form onSubmit={this.handleSubmit}>
+                                                <h1>Login</h1>
+
+                                                <label>Username</label>
+                                                <input
+                                                    name='username'
+                                                    placeholder='Username'
+                                                    value={this.state.username}
+                                                    onChange={this.handleChange}
+                                                /><br />
+
+                                                <label>Password</label>
+                                                <input
+                                                    type='password'
+                                                    name='password'
+                                                    placeholder='Password'
+                                                    value={this.state.password}
+                                                    onChange={this.handleChange}
+                                                /><br />
+
+                                                <input type='submit' />
                                             </form>
                                         </div>
                                     </div>
@@ -82,11 +110,15 @@ const mapStateToPropsComment = (state) => ({
     authres: state.authres
 })
 
-const mapDispatchToPropsComment = {
-    login: userActions.login
-}
+// const mapDispatchToPropsComment = {
+//     login: userActions.userLoginFetch
+// }
+
+const mapDispatchToProps = dispatch => ({
+    userLoginFetch: userInfo => dispatch(userActions.userLoginFetch(userInfo))
+})
 
 export default connect(
     mapStateToPropsComment,
-    mapDispatchToPropsComment
+    mapDispatchToProps
 )(Login);
