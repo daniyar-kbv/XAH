@@ -14,6 +14,7 @@ import {
     Body,
     Title,
 } from 'native-base';
+import Main from './main';
 
 
 class Home extends React.Component {
@@ -47,7 +48,7 @@ class Home extends React.Component {
             <Container>
                 <Tabs>
                     <Tab heading="Главная" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}>
-                        <Text>Tab1</Text>
+                        <Main/>
                     </Tab>
                     <Tab heading="Авто" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}>
                         <Text>Tab2</Text>

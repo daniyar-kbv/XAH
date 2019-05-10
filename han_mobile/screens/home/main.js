@@ -12,7 +12,7 @@ import {
     Button,
     Icon,
     Right
-} from 'native-base';
+} from 'native-base'; 
 
 class Main extends React.Component {
     render() {
@@ -21,36 +21,62 @@ class Main extends React.Component {
                 <Content>
                     <FlatList
                         data={[
-                            {}, {}, {},
+                            {
+                                title: 'Переименование столицы',
+                                author: 'Мурат Муратович',
+                                like_count: '1708921',
+                                comment_count: '355923',
+                                date_published: '22.05.19',
+                                author_profile_url: '',
+                                article_url: ''
+                            }, 
+                            {
+                                title: '',
+                                author: '',
+                                like_count: '',
+                                comment_count: '',
+                                date_published: '',
+                                author_profile_url: '',
+                                article_url: ''
+                            }, 
+                            {
+                                title: '',
+                                author: '',
+                                like_count: '',
+                                comment_count: '',
+                                date_published: '',
+                                author_profile_url: '',
+                                article_url: ''
+                            },
                         ]}
-                        renderItem={({ item }) => <Card>
+                        renderItem={({ item }) => <Card onPress={() => this.props.navigation.navigate("Comments")}>
                             <CardItem>
                                 <Left>
-                                    <Thumbnail source={{ uri: 'Image URL' }} />
+                                    <Thumbnail source={require('../../assets/images/murat.jpg')} />
                                     <Body>
-                                        <Text>NativeBase</Text>
-                                        <Text note>GeekyAnts</Text>
+                                        <Text>{item.title}</Text>
+                                        <Text note>{item.author}</Text>
                                     </Body>
                                 </Left>
                             </CardItem>
                             <CardItem cardBody>
-                                <Image source={{ uri: 'Image URL' }} style={{ height: 200, width: null, flex: 1 }} />
+                                <Image source={require('../../assets/images/astana.jpg')} style={{ height: 200, width: null, flex: 1 }} />
                             </CardItem>
                             <CardItem>
                                 <Left>
                                     <Button transparent>
                                         <Icon active name="thumbs-up" />
-                                        <Text>1255522</Text>
+                                        <Text>{item.like_count}</Text>
                                     </Button>
                                 </Left>
                                 <Body>
                                     <Button transparent>
                                         <Icon active name="chatbubbles" />
-                                        <Text>424355</Text>
+                                        <Text>{item.comment_count}</Text>
                                     </Button>
                                 </Body>
                                 <Right>
-                                    <Text>22.05.19</Text>
+                                    <Text>{item.date_published}</Text>
                                 </Right>
                             </CardItem>
                         </Card>} />
