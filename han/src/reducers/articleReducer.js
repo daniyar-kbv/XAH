@@ -24,23 +24,35 @@ const firstBusinessArticle = (state = {}, action) => {
     }
 }
 
-// const firstAutoArticle = (state = {}, action) => {
-//     switch (action.type) {
-//         case actionTypes.ACTION_GET_ARTICLES_SUCCESS:
-//             return action.articles[1];
-//         default:
-//             return state;
-//     }
-// }
+const firstAutoArticle = (state = {}, action) => {
+    switch (action.type) {
+        case actionTypes.ACTION_GET_ARTICLES_SUCCESS:
+            return action.articles[1];
+        default:
+            return state;
+    }
+}
 
-// const firstSportArticle = (state = {}, action) => {
-//     switch (action.type) {
-//         case actionTypes.ACTION_GET_ARTICLES_SUCCESS:
-//             return action.articles[2];
-//         default:
-//             return state;
-//     }
-// }
+const firstSportArticle = (state = {}, action) => {
+    switch (action.type) {
+        case actionTypes.ACTION_GET_ARTICLES_SUCCESS:
+            return action.articles[2];
+        default:
+            return state;
+    }
+}
+
+const articlesByCat = (state = [], action) => {
+    switch (action.type) {
+        case actionTypes.ACTION_GET_ARTICLES_CAT_SUCCESS:
+            return action.articles;
+        case actionTypes.ACTION_GET_ARTICLES_CAT_STARTED:
+        case actionTypes.ACTION_GET_ARTICLES_CAT_FAILED:
+            return [];
+        default:
+            return state;
+    }
+}
 
 const article = (state = {}, action) => {
     switch (action.type) {
@@ -55,8 +67,9 @@ const articleReducer = combineReducers({
     articles,
     firstBusinessArticle,
     article,
-    // firstAutoArticle,
-    // firstSportArticle
+    firstAutoArticle,
+    firstSportArticle,
+    articlesByCat
 });
 
 export default articleReducer;

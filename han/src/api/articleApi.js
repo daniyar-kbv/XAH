@@ -18,6 +18,15 @@ export const getArticle = (articleId) => (
     )
 )
 
+export const getArticlesByCat = (categoryId) => (
+    fetch(
+        urls.ARTICLE_URL + categoryId,
+        {
+        method: 'GET',
+        }
+    )
+)
+
 // export const createArticle = (data) => {
 //     fetch(
 //         urls.ARTICLE_URL,

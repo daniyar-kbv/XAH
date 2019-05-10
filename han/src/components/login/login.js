@@ -40,23 +40,23 @@ class Login extends Component {
                                             <form onSubmit={this.handleSubmit} className="text-left col-lg-8 dark-form">
                                                 <div className="form-group">
                                                     <label>Имя пользователя</label>
-                                                    <input 
+                                                    <input
                                                         name='username'
-                                                        value={this.state.username} 
-                                                        onChange={this.handleChange} 
-                                                        className="form-control form-control-lg"id="login-username" 
+                                                        value={this.state.username}
+                                                        onChange={this.handleChange}
+                                                        className="form-control form-control-lg" id="login-username"
                                                         placeholder="Имя пользователя" />
                                                 </div>
                                                 <div className="form-group">
                                                     <label>Пароль</label>
-                                                    <input 
+                                                    <input
                                                         name='password'
-                                                        value={this.state.password} 
-                                                        onChange={this.handleChange} 
-                                                        className="form-control form-control-lg" id="login-password" 
+                                                        value={this.state.password}
+                                                        onChange={this.handleChange}
+                                                        className="form-control form-control-lg" id="login-password"
                                                         placeholder="Введите пароль" />
-                                                        <small>Забыли пароль? <p>Сбросить</p>
-                                                        </small>
+                                                    <small>Забыли пароль? <p>Сбросить</p>
+                                                    </small>
                                                 </div>
                                                 <div>
                                                     <div className="custom-control custom-checkbox align-items-center">
@@ -84,10 +84,14 @@ class Login extends Component {
     }
 }
 
+const mapStateToProps = (state) => ({
+})
+
 const mapDispatchToProps = dispatch => ({
     userLoginFetch: userInfo => dispatch(userActions.userLoginFetch(userInfo))
 })
 
 export default connect(
+    mapStateToProps,
     mapDispatchToProps
 )(Login);

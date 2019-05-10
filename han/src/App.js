@@ -16,8 +16,8 @@ class App extends Component {
             <div className="App">
                 <Header/>
                 <Route path="/" exact component={Mainpage}></Route>
-                <Route path="/category" exact component={Category}></Route>
-                <Route path="/article" exact component={Article}></Route>
+                <Route path="/category/:categoryId" exact component={Category}></Route>
+                <Route path="/article/:articleId" exact component={Article}></Route>
                 <Route path="/registration" exact component={Registration}></Route>
                 <Route path="/login" exact component={Login}></Route>
                 <Footer/>

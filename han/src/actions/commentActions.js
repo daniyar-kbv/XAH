@@ -2,14 +2,14 @@
 import * as actionTypes from '../constants/actionTypes';
 import * as commentApi from '../api/commentApi';
 
-export const getComments = () => (dispatch, getState) => {
+export const getComments = (articleId) => (dispatch, getState) => {
 
   dispatch({
     type: actionTypes.ACTION_GET_COMMENTS_STARTED
   })
 
   commentApi
-    .getComments()
+    .getComments(articleId)
     .then(
       response => {
         response
@@ -27,13 +27,13 @@ export const getComments = () => (dispatch, getState) => {
     )
 }
 
-export const createComment = (data) => (dispatch, getState) => {
+export const createComment = (data, articleId) => (dispatch, getState) => {
     dispatch({
         type: actionTypes.ACTION_CREATE_COMMENT_STARTED
     });
 
     commentApi.createComment({
         body: data.body
-    }).then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+    }, articleId).then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
     .catch(error => console.error(error));
 };

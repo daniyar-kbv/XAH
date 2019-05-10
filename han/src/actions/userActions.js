@@ -34,6 +34,8 @@ export const userPostFetch = user => {
                     console.log('reg error')
                 } else {
                     localStorage.setItem("JWT", data.token)
+                    localStorage.setItem("userId", data.userId)
+                    localStorage.setItem("username", data.username)
                     dispatch(loginUser(data.user))
                 }
             })
@@ -48,6 +50,8 @@ export const userLoginFetch = user => {
                     console.log(data.message)
                 } else {
                     localStorage.setItem("JWT", data.token)
+                    localStorage.setItem("userId", data.userId)
+                    localStorage.setItem("username", data.username)
                     dispatch(loginUser(data.user))
                 }
             })

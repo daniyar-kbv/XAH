@@ -46,6 +46,18 @@ exports.findAll = (req, res) => {
     });
 };
 
+exports.findByCat = (req, res) => {
+    Article.find({category: req.params.categoryId})
+    .then(articles => {
+        console.log('get articles success');
+        res.send(articles);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving articles."
+        });
+    });
+};
+
 exports.findOne = (req, res) => {
     Article.findById(req.params.articleId)
     .then(article => {
