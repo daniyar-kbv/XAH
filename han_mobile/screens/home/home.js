@@ -1,47 +1,67 @@
 import React from 'react';
 import {
-    Container,
-    Header,
-    Left,
-    Body,
     Button,
-    Icon,
-    Title,
-    Form,
-    Input,
-    Item,
+    Container,
     Content,
-    Text
+    Header,
+    Text,
+    Tabs,
+    Tab,
+    Right,
+    Left,
+    Fab,
+    Icon,
+    Body,
+    Title,
 } from 'native-base';
 
 
 class Home extends React.Component {
-    render() {
-        return (
-            <Container>
-                <Header style={{ backgroundColor: '#000000', elevation: 0 }} androidStatusBarColor='#000000'>
+
+    static navigationOptions = ({ navigation }) => {
+        return {
+            header: (
+                <Header hasTabs style={{ backgroundColor: '#000000', elevation: 0 }} androidStatusBarColor='#000000'>
                     <Left>
                         <Button transparent>
-                            <Icon name='arrow-back' />
+                            <Icon name='menu' />
                         </Button>
                     </Left>
                     <Body>
-                        <Title>Вход</Title>
+                        <Title>XAH e-Journal</Title>
                     </Body>
+                    <Right>
+                        <Button
+                            transparent
+                            onPress={() => navigation.navigate("Login")}>
+                            <Text>Вход</Text>
+                        </Button>
+                    </Right>
                 </Header>
-                <Content style={{padding: 16}}>
-                    <Form>
-                        <Item regular style={{marginTop: 16}}>
-                            <Input placeholder='E-mail' />
-                        </Item>
-                        <Item regular style={{marginTop: 8}}>
-                            <Input placeholder='Пароль' secureTextEntry />
-                        </Item>
-                    </Form>
-                    <Button full dark style={{marginTop: 8}}>
-                        <Text>Войти</Text>
-                    </Button>
-                </Content>
+            ),
+        };
+    };
+
+    render() {
+        return (
+            <Container>
+                <Tabs>
+                    <Tab heading="Главная" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}>
+                        <Text>Tab1</Text>
+                    </Tab>
+                    <Tab heading="Авто" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}>
+                        <Text>Tab2</Text>
+                    </Tab>
+                    <Tab heading="Бизнес" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}>
+                        <Text>Tab3</Text>
+                    </Tab>
+                    <Tab heading="Спорт" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}>
+                        <Text>Tab4</Text>
+                    </Tab>
+                </Tabs>
+                <Fab style={{ backgroundColor: '#000000' }}>
+                    <Icon name="search" />
+                </Fab>
             </Container>
         )
     }

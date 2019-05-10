@@ -1,22 +1,8 @@
 import React from 'react';
 import { Font, AppLoading } from 'expo';
-import { StyleSheet, View, Image } from 'react-native';
-import {
-  Button,
-  Container,
-  Content,
-  Header,
-  Text,
-  Tabs,
-  Tab,
-  Right,
-  Left,
-  Fab,
-  Icon,
-  Body,
-  Title,
-} from 'native-base';
-import Login from './screens/login/login';
+import { Container } from 'native-base';
+import { AppNavigator } from './navigators/navigators'
+import Main from './screens/home/main'
 
 export default class App extends React.Component {
 
@@ -42,42 +28,9 @@ export default class App extends React.Component {
       );
     }
     return (
-      // <Container>
-      //   <Header hasTabs style={{ backgroundColor: '#000000', elevation: 0 }} androidStatusBarColor='#000000'>
-      //     <Left>
-      //       <Button transparent>
-      //         <Icon name='menu' />
-      //       </Button>
-      //     </Left>
-      //     <Body>
-      //       <Title>XAH e-Journal</Title>
-      //     </Body>
-      //     <Right>
-      //       <Button transparent>
-      //         <Text>Вход</Text>
-      //       </Button>
-      //     </Right>
-      //   </Header>
-      //   <Tabs>
-      //     <Tab heading="Главная" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}></Tab>
-      //     <Tab heading="Авто" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}></Tab>
-      //     <Tab heading="Бизнес" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}></Tab>
-      //     <Tab heading="Спорт" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}></Tab>
-      //   </Tabs>
-      //   <Fab style={{ backgroundColor: '#000000' }}>
-      //     <Icon name="search" />
-      //   </Fab>
-      // </Container>
-      <Login/>
+      // <AppNavigator/>
+      <Main/>
     );
   }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });

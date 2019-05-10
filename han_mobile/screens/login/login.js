@@ -15,12 +15,13 @@ import {
 } from 'native-base';
 
 class Login extends React.Component {
-    render() {
-        return (
-            <Container>
+
+    static navigationOptions = ({ navigation }) => {
+        return {
+            header: (
                 <Header style={{ backgroundColor: '#000000', elevation: 0 }} androidStatusBarColor='#000000'>
                     <Left>
-                        <Button transparent>
+                        <Button transparent onPress={() => navigation.goBack()}>
                             <Icon name='arrow-back' />
                         </Button>
                     </Left>
@@ -28,6 +29,13 @@ class Login extends React.Component {
                         <Title>Вход</Title>
                     </Body>
                 </Header>
+            ),
+        };
+    };
+
+    render() {
+        return (
+            <Container>
                 <Content style={{padding: 16}}>
                     <Form>
                         <Item regular style={{marginTop: 16}}>
