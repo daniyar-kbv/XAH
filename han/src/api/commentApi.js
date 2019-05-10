@@ -1,16 +1,16 @@
 import * as urls from '../constants/urls';
 
-export const getComments = () => (
+export const getComments = (articleId) => (
     fetch(
-        urls.COMMENT_URL + '5ccb39fd7aa86838c7ad3882',
+        urls.COMMENT_URL + articleId,
         {
         method: 'GET',
         }
     )
 )
 
-export function createComment(data = {}) {
-    return fetch(urls.COMMENT_URL + '5ccb39fd7aa86838c7ad3882', {
+export function createComment(data = {}, articleId) {
+    return fetch(urls.COMMENT_URL + articleId, {
         method: "POST",
         // cache: "no-cache",
         // credentials: "same-origin",

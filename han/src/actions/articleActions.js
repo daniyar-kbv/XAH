@@ -51,3 +51,29 @@ export const getArticle = (articleId) => (dispatch, getState) => {
             }
         )
 }
+
+export const getArticlesByCat = (categoryId) => (dispatch, getState) => {
+
+    dispatch({
+        type: actionTypes.ACTION_GET_ARTICLES_CAT_STARTED
+    })
+
+    articleApi
+        .getArticlesByCat(categoryId)
+        .then(
+            response => {
+                response
+                    .text()
+                    .then(
+                        value => {
+                            const articles = JSON.parse(value);
+                            dispatch({
+                                type: actionTypes.ACTION_GET_ARTICLES_CAT_SUCCESS,
+                                articles,
+                            });
+                        }
+                    );
+            }
+        )
+
+}

@@ -51,15 +51,18 @@ exports.findAll = (req, res) => {
     Article.findById(req.params.articleId).then(article => {
         Comment.find({article: article}).then(comments => {
             res.send(comments);
+            console.log('get comments success')
         }).catch(err => {
             res.status(500).send({
                 message: err.message || "Some error occurred while retrieving comments."
             });
+            console.log(err.message || "Some error occurred while retrieving comments.")
         });
     }).catch(err => {
         res.status(500).send({
             message: err.message || "No such article"
         });
+        console.log(err.message || "No such article")
     })
 };
 

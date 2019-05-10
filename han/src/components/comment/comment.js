@@ -16,15 +16,14 @@ class Comments extends Component{
     }
 
     componentDidMount() {
-        this.props.getComments();
-        this.props.getUser('5ccb30fc51662f37385c2e06');
+        this.props.getComments(this.props.articleId);
     }
 
     handleCreateComment() {
         let data = {
             body: document.getElementById("comment-reply-text").value
         }
-        this.props.createComment(data);
+        this.props.createComment(data, this.props.articleId);
     }
 
     render(){

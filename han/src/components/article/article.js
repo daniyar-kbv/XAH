@@ -9,13 +9,14 @@ import PostInCard from '../postincard/postInCard'
 import { Image } from 'react-bootstrap'
 
 class Article extends Component {
-
+    
     componentDidMount() {
-        const {articleId} = this.props.location.state
+        const {articleId} = this.props.match.params
         this.props.getArticle(articleId)
     }
 
     render() {
+        const {articleId} = this.props.match.params;
         return (
             <div>
                 <section className="bg-white space-sm">
@@ -52,7 +53,7 @@ class Article extends Component {
                                 </article>
                                 <hr />
                                 <h5 className="mb-4">Discussion</h5>
-                                <Comments />
+                                <Comments articleId={articleId}/>
                             </div>
                             <div className="col-12 col-md-4">
                                 <div className="card">
