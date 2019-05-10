@@ -2,6 +2,7 @@ import React from 'react';
 import { Font, AppLoading } from 'expo';
 import { Container } from 'native-base';
 import { AppNavigator } from './navigators/navigators'
+import Main from './screens/home/main'
 
 export default class App extends React.Component {
 
@@ -27,7 +28,8 @@ export default class App extends React.Component {
       );
     }
     return (
-      <AppNavigator/>
+      // <AppNavigator/>
+      <Main/>
     );
   }
 }
