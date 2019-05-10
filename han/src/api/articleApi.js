@@ -20,27 +20,20 @@ export const getArticle = (articleId) => (
 
 export const getArticlesByCat = (categoryId) => (
     fetch(
-        urls.ARTICLE_URL + categoryId,
+        urls.ARTICLE_URL + 'cat/' + categoryId,
         {
         method: 'GET',
         }
     )
 )
 
-// export const createArticle = (data) => {
-//     fetch(
-//         urls.ARTICLE_URL,
-//         {
-//             method: 'POST',
-//             body: JSON.stringify({
-//                 title: data.title,
-//                 body: data.body,
-//                 imageUrl: data.imageUrl,
-//                 category: data.category
-//             }),
-//             headers: {
-//                 "Content-type": "application/json; charset=UTF-8;"
-//             }
-//         }
-//     )
-// }
+export function createArticle(data = {}, token) {
+    return fetch(urls.ARTICLE_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "JWT " + token
+        },
+        body: JSON.stringify(data),
+    }).then(response => response.json());
+}

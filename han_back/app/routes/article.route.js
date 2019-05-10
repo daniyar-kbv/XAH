@@ -9,7 +9,7 @@ module.exports = (app) => {
 
     app.get('/articles', articles.findAll);
 
-    app.get('/articles/:categoryId', articles.findByCat);
+    app.get('/articles/cat/:categoryId', articles.findByCat);
 
     app.get('/articles/:articleId', articles.findOne);
 

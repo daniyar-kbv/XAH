@@ -27,13 +27,13 @@ export const getComments = (articleId) => (dispatch, getState) => {
     )
 }
 
-export const createComment = (data, articleId) => (dispatch, getState) => {
+export const createComment = (data, articleId, token) => (dispatch, getState) => {
     dispatch({
         type: actionTypes.ACTION_CREATE_COMMENT_STARTED
     });
 
     commentApi.createComment({
         body: data.body
-    }, articleId).then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+    }, articleId, token).then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
     .catch(error => console.error(error));
 };

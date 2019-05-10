@@ -13,7 +13,7 @@ import * as categoryActions from '../../actions/categoryActions'
 
 function ifNotUndefined(obj) {
     if (obj) return obj
-    else return 's'
+    else return ''
 }
 
 class Hotnews extends Component {
@@ -24,11 +24,10 @@ class Hotnews extends Component {
     }
 
     render() {
-        // console.log(this.props.categories.find(category => category._id==='5ccab68910899d2d10de4e11'))
         return (
             <div className="row mt-5 ml-1 mr-1" id="hot-news">
-                {/* <div className="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style={functions.image(images.b1)}> */}
-                <div className="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style={functions.image(require('../mainpage/images/oscar.jpg'))}>
+            {console.log(this.props.firstBusinessArticle.title)}
+                <div className="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style={{ backgroundImage: "url(" + require('../../assets/images/b1.jpg') + ")"}}>
                     <Link to={`/article/${this.props.firstBusinessArticle._id}`}>
                         <div className="d-flex align-items-end flex-column h-100">
                             <div className="ml-auto d-flex cat-box">

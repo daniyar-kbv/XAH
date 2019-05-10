@@ -77,3 +77,24 @@ export const getArticlesByCat = (categoryId) => (dispatch, getState) => {
         )
 
 }
+
+export const createArticle = (data, token) => (dispatch, getState) => {
+    dispatch({
+        type: actionTypes.ACTION_CREATE_ARTICLE_STARTED
+    });
+
+    articleApi.createArticle({
+        title: data.title,
+        body: data.body,
+        iamgeUrl: data.iamgeUrl,
+        category: data.category
+    }, token).then(data => {
+        console.log(JSON.stringify(data))
+        const article = JSON.parse(data);
+        dispatch({
+            type: actionTypes.ACTION_CREATE_ARTICLE_SUCCESS,
+            article,
+        });
+    }) // JSON-string from `response.json()` call
+    .catch(error => console.error(error));
+};

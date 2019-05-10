@@ -9,13 +9,14 @@ export const getComments = (articleId) => (
     )
 )
 
-export function createComment(data = {}, articleId) {
+export function createComment(data = {}, articleId, token) {
     return fetch(urls.COMMENT_URL + articleId, {
         method: "POST",
         // cache: "no-cache",
         // credentials: "same-origin",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": "JWT " + token
         },
         // redirect: "follow",
         // referrer: "no-referrer",
