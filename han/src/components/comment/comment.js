@@ -23,7 +23,7 @@ class Comments extends Component{
         let data = {
             body: document.getElementById("comment-reply-text").value
         }
-        this.props.createComment(data, this.props.articleId);
+        this.props.createComment(data, this.props.articleId, localStorage.getItem('JWT'));
     }
 
     render(){

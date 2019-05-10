@@ -7,14 +7,16 @@ import Article from "../models/article.model";
 import middleware from '../../middleware';
 
 exports.create = (req, res) => {
+    console.log('asd')
     if(!req.body.body)  {
         return res.status(400).send({
             message: "Comment content can not be empty"
         });
+        console.log("Comment content can not be empty")
     }
 
     // User.findById(req.decoded.userId).then(user => {
-    User.findById("5ccb30fc51662f37385c2e06").then(user => {
+    User.findById(req.decoded.userId).then(user => {
         Article.findById(req.params.articleId).then(article => {
             if (article != ''){
                 const comment = new Comment({
@@ -26,24 +28,28 @@ exports.create = (req, res) => {
                 comment.save()
                 .then(data => {
                     res.send(data);
+                    console.log('comment created succefully')
                 }).catch(err => {
+                    console.log(err.message)
                     res.status(500).send({
                         message: err.message || "Some error occurred while creating the Comment."
                     });
                 });
             }
             else{
+                console.log("Article not found")
                 res.status(500).send({
                     message: err.message || "Article not found"
                 });
             }
         }).catch(err => {
+            console.log(err.message)
             res.status(500).send({
                 message: err.message || "Some error occurred while creating the Comment."
             });
         })
     }).catch(err => {
-        
+        console.log(err.message)
     })
 };
 

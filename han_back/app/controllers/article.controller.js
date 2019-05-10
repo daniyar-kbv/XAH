@@ -4,7 +4,10 @@ import User from '../models/user.model'
 import middleware from '../../middleware';
 
 exports.create = (req, res) => {
+    console.log('asd')
     if(!req.body.title || !req.body.body || !req.body.category) {
+        console.log("Invalid parameters")
+        console.log(req.body.title + '\n' + req.body.body + '\n' + req.body.category)
         return res.status(400).send({
             message: "Invalid parameters"
         });
@@ -20,14 +23,17 @@ exports.create = (req, res) => {
         });
     
         article.save()
+        console.log('article create successfull')
         .then(data => {
             res.send(data);
         }).catch(err => {
+            console.log(err.message)
             res.status(500).send({
                 message: err.message || "Some error occurred while creating the Article."
             });
         });
     }).catch(err => {
+        console.log(err.message)
         res.status(500).send({
             message: err.message || "No such user"
         });

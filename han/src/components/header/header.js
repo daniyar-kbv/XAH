@@ -25,13 +25,14 @@ class Header extends Component {
                     <li className="col-sm-2">
                         <h5><p onClick={this.logout} className="nav-link">Выйти</p></h5>
                     </li>
+                    <Link to={'/post'}><h5><p className="nav-link">New article</p></h5></Link>
                 </div>
             )
         }
         else {
             return (
                 <li className="col-sm-2">
-                    <Link to={'./login'}><h5><p className="nav-link">Войти</p></h5></Link>
+                    <Link to={'/login'}><h5><p className="nav-link">Войти</p></h5></Link>
                 </li>
             )
         }
@@ -81,9 +82,9 @@ class Header extends Component {
                                 <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
                                     <ul className="navbar-nav">
                                         <CategoryInNav name={"Главная"} link={'/'} />
-                                        <CategoryInNav name={"Авто"} link={'./category/5ccab68910899d2d10de4e11'} />
-                                        <CategoryInNav name={"Бизнес"} link={'./category/5cd3341eda95f51cc8317352'} />
-                                        <CategoryInNav name={"Спорт"} link={'./category/5cd33428da95f51cc8317353'} />
+                                        <CategoryInNav name={"Авто"} link={'/category/5ccab68910899d2d10de4e11'} />
+                                        <CategoryInNav name={"Бизнес"} link={'/category/5cd3341eda95f51cc8317352'} />
+                                        <CategoryInNav name={"Спорт"} link={'/category/5cd33428da95f51cc8317353'} />
                                     </ul>
                                     <ul className="navbar-nav w-50">
                                         <form className="form-inline col p-0 pl-md-2 pr-md-3">

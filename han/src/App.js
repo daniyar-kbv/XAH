@@ -8,6 +8,7 @@ import Article from '../src/components/article/article'
 import Mainpage from './components/mainpage/main'
 import Registration from './components/registration/registration'
 import Login from './components/login/login'
+import articleCreate from './components/artclecreate/articleCreate'
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
                 <Route path="/article/:articleId" exact component={Article}></Route>
                 <Route path="/registration" exact component={Registration}></Route>
                 <Route path="/login" exact component={Login}></Route>
+                <Route path="/post" exact component={articleCreate}></Route>
                 <Footer/>
             </div>
         </Router>
