@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Image } from 'react-native';
+import { FlatList, Image, TouchableOpacity } from 'react-native';
 import {
     Container,
     Content,
@@ -49,7 +49,8 @@ class Main extends React.Component {
                                 article_url: ''
                             },
                         ]}
-                        renderItem={({ item }) => <Card onPress={() => this.props.navigation.navigate("Comments")}>
+                        renderItem={({ item }) => <TouchableOpacity onPress={() => this.props.navigation.navigate("Article")}>
+                        <Card>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={require('../../assets/images/murat.jpg')} />
@@ -79,7 +80,8 @@ class Main extends React.Component {
                                     <Text>{item.date_published}</Text>
                                 </Right>
                             </CardItem>
-                        </Card>} />
+                        </Card> 
+                        </TouchableOpacity> } />
                 </Content>
             </Container>
         );

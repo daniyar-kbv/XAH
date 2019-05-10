@@ -18,7 +18,7 @@ class Article extends React.Component {
         return (
             <Container>
                 <Button full dark onPress={() => this.props.navigation.navigate("Comments")}>
-                    <Text>Войти</Text>
+                    <Text>Комментарии</Text>
                 </Button>
             </Container>
         );

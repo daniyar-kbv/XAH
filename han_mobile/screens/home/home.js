@@ -48,7 +48,7 @@ class Home extends React.Component {
             <Container>
                 <Tabs>
                     <Tab heading="Главная" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}>
-                        <Main/>
+                        <Main navigation={this.props.navigation}/>
                     </Tab>
                     <Tab heading="Авто" tabStyle={{ backgroundColor: '#000000' }} textStyle={{ color: '#fff' }} activeTabStyle={{ backgroundColor: '#000000' }} activeTextStyle={{ color: '#fff' }}>
                         <Text>Tab2</Text>
